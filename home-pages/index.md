@@ -7,6 +7,7 @@ description: Guide to help build and run Identity Analytic's self-managed soluti
   <tablist>
     <tab>Guides</tab>
     <tab>Developer</tab>
+    <tab>Self-Managed</tab>
   </tablist>
 
   <tabpanels>
