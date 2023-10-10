@@ -1,9 +1,6 @@
 ---
-layout: page
-title: "Before installation"
-parent: "Packaging"
-has_children: true
-nav_order: 0
+title: Before installation
+description: List of pre-requisites to validate before installing the self-managed solution
 ---
 
 # Before installation

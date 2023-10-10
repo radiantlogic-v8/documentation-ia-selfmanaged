@@ -1,9 +1,6 @@
 ---
-layout: page
-title: "Debian installation"
-parent: "Installation"
-
-toc: true
+title: Debian installation
+description: Identity Analytics self-managed installation on Debian
 ---
 
 # Debian installation
@@ -16,13 +13,9 @@ sudo timedatectl set-timezone Europe/Paris
 
 ## Install Docker Runtime
 
-To install the docker runtime you can execute these commands:
+To install the docker please refer to dockers official documentation:
 
-```sh
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
-sudo gpasswd -a $(whoami) docker
-```
+- [https://docs.docker.com/engine/install/debian/](https://docs.docker.com/engine/install/debian/)
 
 > [!warning] Log out and log back in, to make sure your user gets the permissions to run docker commands
 

@@ -1,9 +1,6 @@
 ---
-layout: page
-title: "Windows desktop installation"
-parent: "Installation"
-
-toc: true 
+title: Windows desktop installation
+description: Identity Analytics self-managed installation on a windows desktop
 ---
 
 # Windows desktop installation

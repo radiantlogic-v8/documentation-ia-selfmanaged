@@ -1,9 +1,6 @@
 ---
-layout: page
-title: "Upgrading the application"
-parent: "Run-ops"
-nav_order: 2
-toc: true
+title: Solution Upgrades
+description: Identity Analytics self-managed solution upgrade guides
 ---
 
 # Upgrading the application

@@ -1,10 +1,6 @@
 ---
-layout: page
-title: "Run-ops"
-parent: "Packaging"
-grand_parent: "Installation and deployment"
-has_children: true
-nav_order: 7
+title: Run-ops
+description: Identity Analytics self-managed solution run-ops guide
 ---
 
 # Run-ops
@@ -39,10 +35,9 @@ To get the full list of commands type `brainwave --help`. For more information o
 
 Please find bellow some examples.
 
-* Start the services: `brainwave start`
-* Stop the services: `brainwave stop`
-* Display log files:  
-  * `brainwave logs` to see logs from all containers
-  * `brainwave logs bwportal` to see the logs from the portal
-  * `brainwave logs bwbatch` to see the logs from the batch
-
+- Start the services: `brainwave start`
+- Stop the services: `brainwave stop`
+- Display log files:  
+  - `brainwave logs` to see logs from all containers
+  - `brainwave logs bwportal` to see the logs from the portal
+  - `brainwave logs bwbatch` to see the logs from the batch

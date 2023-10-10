@@ -103,10 +103,10 @@ Please note that the "standard" installation method of installing the solution i
   > [Pre-requisites](before-installation/preface)  
   > The included page will provide you with all the necessary information and processes to implement before the installation of the self-managed solution of Identity Analytics.  
 
-  > [Configuration](configuration/preview)
+  > [Configuration](configuration/config-ui)
   > Learn how to configure the self-managed solution of Identity Analytics.  
 
-  > [Installation guide](installation/preview)
+  > [Installation guide](installation/preface)
   > Learn how to install the self-managed solution on the different supported environments.  
 
   > [RadiantOne integration](integrations/radiantone)
@@ -118,7 +118,7 @@ Please note that the "standard" installation method of installing the solution i
   > [Controller user guide](containers/controller)
   > The linked page is the user guide for the controller. This documentation provides all the necessary information on how to use the controller from email configuration to extraction testing.  
 
-  > [Run ops](run-ops/preview)
+  > [Run ops](run-ops/preface)
   > Learn all the necessary commands to ensure a successful run and maintenance of the self-managed solution in time.  
 
   > [Troubleshooting](troubleshooting/troubleshooting)

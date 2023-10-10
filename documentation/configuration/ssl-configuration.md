@@ -1,9 +1,6 @@
 ---
-layout: page
-title: "SSL configuration"
-parent: "Configuration"
-
-toc: true
+title: SSL configuration
+description: Steps required to configure an SSL connection
 ---
 
 # SSL configuration
@@ -47,10 +44,6 @@ Find the path of the volume in your local deployment place the files inside the 
 ## Certificate generation
 
 ### LetsEncrypt certificate using certbot
-{: .d-inline-block }
-
-**optional**
-{: .label .label-blue }
 
 These steps allow to generate letsencrypt certificates using certbot on an Amazon Linux instance. Given that the instance has a valid public IP and that the port 80 is open and reachable on the internet.
 
@@ -67,23 +60,19 @@ Follow the wizard, certbot will ask for your email and the domain.
 Now lets copy the certificates to the good place. Make sure to adjust the example paths
 
 ```sh
-sudo cp /etc/letsencrypt/live/pkg-lab.test.brainwavegrc.com/privkey.pem /etc/brainwave/certificates/pkg-lab.test.brainwavegrc.com.key
+sudo cp /etc/letsencrypt/live/demo.acme.com/privkey.pem /etc/brainwave/certificates/demo.acme.com.key
 
-sudo cp /etc/letsencrypt/live/pkg-lab.test.brainwavegrc.com/cert.pem /etc/brainwave/certificates/pkg-lab.test.brainwavegrc.com.crt
+sudo cp /etc/letsencrypt/live/demo.acme.com/cert.pem /etc/brainwave/certificates/demo.acme.com.crt
 ```
 
 ### Self-signed example
-{: .d-inline-block }
-
-**optional**
-{: .label .label-blue }
 
 If you do not have the required files you can generate a self-signed certificate using the following commands.  
 
 ```sh
-openssl req -newkey rsa:4096 -keyout brainwave.local.key -out brainwave.local.csr
-openssl x509 -signkey brainwave.local.key -in brainwave.local.csr -req -days 365 -out brainwave.local.crt
-openssl rsa -in brainwave.local.key -out brainwave.local.key
+openssl req -newkey rsa:4096 -keyout demo.acme.com.key -out demo.acme.com.csr
+openssl x509 -signkey demo.acme.com.key -in demo.acme.com.csr -req -days 365 -out demo.acme.com.crt
+openssl rsa -in demo.acme.com.key -out demo.acme.com.key
 ```
 
 [!warning] These commands are provided as an example and **MUST** not be used in a Prod environment.  

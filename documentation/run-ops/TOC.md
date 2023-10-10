@@ -4,6 +4,6 @@ description: List of system requirements for the self-managed solution
 ---
 
 - [Preface](preface.md)
-- [Gitea configuration](gitea.md)
-- [System Requirements](requirements.md)
-- [Installation modes](installation-modes.md)
+- [Backup and Restore](backup-restore.md)
+- [Data Purging](purge.md)
+- [Upgrading](upgrading.md)

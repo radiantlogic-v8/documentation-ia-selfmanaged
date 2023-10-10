@@ -1,9 +1,6 @@
 ---
-layout: page
-title: "Installation modes"
-parent: "Before installation"
-
-toc: true
+title: Installation modes
+description: Explanation of the available installation modes
 ---
 
 # Installation modes

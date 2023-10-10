@@ -1,9 +1,6 @@
 ---
-layout: page
-title: "Gitea configuration"
-parent: "Before installation"
-
-toc: true
+title: Gitea configuration
+description: This guide provides the information required to connect and configure to out Gitea repository that hosts the required artifacts 
 ---
 
 # Gitea configuration

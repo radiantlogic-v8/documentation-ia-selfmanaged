@@ -16,25 +16,26 @@ To use the repository to build locally in Gatsby use the following code in the `
 ```sh
 GATSBY_DEPLOY_REPOS='
 [
+,
   {
     "name": "ia",
     "displayName": "Identity Analytics",
-    "description": "This guide provides a high-level overview Identity Analytics. This documentation includes the user guides and integration guides for Identity Analytics along with the different modules included.",
+    "description": "This guide provides a high-level overview of Identity Analytics. This documentation includes the user guides, integration guides for Identity Analytics along with the different modules included.",
         "links": [
       {
-        "text": "Identity Analytics",
-        "href": "/ia/iap_2.0/#0"
+        "text": "SEE SELF-MANAGED GUIDES",
+        "href": "/ia/version-1.2/#2"
       }
     ],
-    "remote": "https://github.com/radiantlogic-v8/documentation-identity-analytics.git",
+    "remote": "https://github.com/radiantlogic-v8/documentation-ia-selfmanaged.git",
     "patterns": [
       "home-pages/**",
       "documentation/**"
     ],
     "deployBranches": [
       {
-        "name": "iap_2.0",
-        "displayName": "v2.0"
+        "name": "version-1.2",
+        "displayName": "v1.2"
       }
     ]
   }

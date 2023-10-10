@@ -1,9 +1,6 @@
 ---
-layout: page
-title: "Azure connector configuration"
-parent: "Connectors"
-
-toc: true
+title: Azure connector configuration
+description: Configuration of the Azure connector
 ---
 
 # Azure connector configuration

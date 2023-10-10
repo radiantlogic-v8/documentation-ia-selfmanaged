@@ -1,9 +1,6 @@
 ---
-layout: page
-title: "Backup and Restore"
-parent: "Run-ops"
-nav_order: 2
-toc: true
+title: Backup and Restore
+description: Identity Analytics self-managed solution backup and restore guides
 ---
 
 # Backup and Restore

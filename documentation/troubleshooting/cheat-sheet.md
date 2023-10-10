@@ -1,9 +1,6 @@
 ---
-layout: page
-title: "Cheat-Sheet"
-parent: "Packaging"
-toc: true
-nav_order: 9
+title: Cheat-Sheet
+description: Cheat Sheet for when using Identity Analytics self-managed solution
 ---
 
 # Cheat-sheet

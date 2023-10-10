@@ -1,10 +1,6 @@
 ---
-layout: page
-title: "Troubleshooting"
-parent: "Packaging"
-grand_parent: "Installation and deployment"
-nav_order: 8
-toc: true
+title: Troubleshooting
+description: Identity Analytics self-managed solution troubleshooting guide
 ---
 
 # Troubleshooting

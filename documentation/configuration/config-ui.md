@@ -1,9 +1,6 @@
 ---
-layout: page
-title: "Identity Analytics configuration interface"
-parent: "Configuration"
-
-toc: true
+title: Identity Analytics configuration interface
+description: Description of the Configuration UI 
 ---
 
 # Identity Analytics configuration interface
@@ -42,7 +39,7 @@ This will restart the following services:
 * `bwauth`
 * `bwcontroller`
 
-> **Note:** The restart of the services can take a few minutes. Only modified services will be restarted.
+> [!note] The restart of the services can take a few minutes. Only modified services will be restarted.
 
 ### Logout
 
@@ -56,11 +53,7 @@ You can logout by clicking on the logout icon in the header menu.
 
 ![Home Page](images/config-interface/home.png)
 
-This screen show all the configuration sections and their warnings. If configuration settings are missing or incorrect, an orange box and a warning sign will appear.
-
-### Configuration sections
-
-When you click on a configuration section, you will be redirected to the configuration page of this section.  
+This screen shows all the configuration sections and their warnings. If configuration settings are missing or incorrect, an orange box and a warning sign will appear. When you click on a configuration section, you will be redirected to the configuration page of this section.  
 
 Please note that:  
 
@@ -70,7 +63,7 @@ Please note that:
 * If a field is required or invalid, a red box and a warning will appear.
 * if a password is missing, an orange box will surround the field.
 
-#### Global
+### Global
 
 ![Global Page](images/config-interface/global.png)
 
@@ -81,9 +74,9 @@ Please note that:
 * Batch memory: The max memory allocated to the batch.  
 * Portal memory: The max memory allocated to the portal.  
 
-#### Database
+### Database
 
-##### Internal
+#### Internal
 
 ![Database Internal Page](images/config-interface/db_internal.png)
 
@@ -91,7 +84,7 @@ Please note that:
 * Exposure port: The port used to expose the database.
 * Internal database password: The password of the database. Click on `Copy password` to copy the password in your clipboard.
 
-##### External
+#### External
 
 ![Database External Page](images/config-interface/db_external.png)
 
@@ -104,9 +97,9 @@ Please note that:
 * Usernames: The usernames used to connect to your different schemas.
 * Passwords: The passwords used to connect to your different schemas.
 
-#### Git project
+### Git project
 
-##### Without proxy
+#### Without proxy
 
 ![Git Project Page](images/config-interface/git.png)
 
@@ -118,7 +111,7 @@ Please note that:
   ![Project directory](images/config-interface/repository_project_folder_name.png)
 * Connection test: This button will test the connection to the specific branch of the git project with the provided credentials. It is highly recommended to test your connection before saving the configuration.
 
-##### With proxy
+#### With proxy
 
 Enabling this option will route Git traffic through an HTTP proxy. Useful if accessing Git over a restricted network or to increase security.
 
@@ -131,9 +124,9 @@ Enabling this option will route Git traffic through an HTTP proxy. Useful if acc
 * Proxy username: The username used to connect to the proxy.
 * Proxy password: The password used to connect to the proxy.
 
-#### Mail
+### Mail
 
-##### SMTP Settings
+#### SMTP Settings
 
 ![SMTP Page](images/config-interface/smtp.png)
 
@@ -146,7 +139,7 @@ Enabling this option will route Git traffic through an HTTP proxy. Useful if acc
 * Sender email address: The email address used to send the emails.
 * Sender name: The name used to send the emails.
 
-##### Portal and Batch emails Settings
+#### Portal and Batch emails Settings
 
 * Send portal and batch emails: Enable or disable the email sending by the portal and the batch.
 * Redirect email to: The email address to where portal and batch the emails will be redirected.
@@ -155,17 +148,17 @@ Enabling this option will route Git traffic through an HTTP proxy. Useful if acc
 * Maximum number of emails per session: The maximum number of emails per session. If set to 0, there will be no limit.
 * Split size (in megabytes): The split size in megabytes. If the size of the email is greater than the split size, the email will be split in multiple emails. This Field has to be formatted like this `numberM`. e.g `10M`, `4M`, `16M`
 
-#### Batch
+### Batch
 
 ![Batch Page](images/config-interface/batch.png)
 
 * Technical configuration name: The name of the technical configuration used by the batch.
 
-#### Scheduling
+### Scheduling
 
 ![Scheduling Page](images/config-interface/scheduling.png)
 
-##### Task automation settings
+#### Task automation settings
 
 Here you can configure the frequency when the tasks will be executed.
 
@@ -173,12 +166,12 @@ For each container (Batch, extraction and portal), you can configure the frequen
 
 * Secure portal stop timeout (ms): When the portal is stopped, it closes securely by allowing time for ongoing tasks to complete. This parameter sets the waiting time before forcing the portal to stop.
 
-### Uploads
+## Uploads
 
 ![Uploads Page](images/config-interface/uploads.png)
 
 This page allows you to upload your Identity Analytics license file.
 
-> **Note:** The license file has to contain `.lic` extension. (e.g. `brainwave.lic`)
+> [!note] The license file has to contain `.lic` extension. (e.g. `brainwave.lic`)
 
 If a license file is already uploaded, you can delete it by clicking on the `Delete` button.  

@@ -1,9 +1,6 @@
 ---
-layout: page
-title: "Purging timeslots"
-parent: "Run-ops"
-nav_order: 2
-toc: true
+title: Data purge
+description: Identity Analytics self-managed solution guide to purge data
 ---
 
 # Purging timeslots

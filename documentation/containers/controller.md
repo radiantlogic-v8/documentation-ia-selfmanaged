@@ -1,8 +1,6 @@
 ---
-layout: page
-title: "The controller"
-parent: "Containers"
-
+title: The controller
+description: The controller usage and configuration documentation
 ---
 
 # The controller

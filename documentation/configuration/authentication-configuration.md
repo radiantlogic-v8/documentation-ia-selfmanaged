@@ -1,8 +1,6 @@
 ---
-layout: page
-title: "Authentication and authorization configuration"
-parent: "Configuration"
-
+title: Authentication and authorization configuration
+description: Authentication and authorization configuration
 ---
 
 # Authentication and authorization configuration
@@ -41,7 +39,7 @@ There are 2 cases:
 
 In the first case, the default password of `setup` user is `Brainwave@2023`. After successful login, you are invited to change it.
 
-> **Note:** that the new password must match the initial Password Policy:
+> The new password must match the initial Password Policy:
 
 - History: 10
 - Force change password after: 90 days
@@ -66,7 +64,7 @@ To retrieve the password of `setup` user please follow steps.
 Keycloak can notify end-users related to accounts and credentials lifecycle.  
 The email configuration in Keycloak is managed by the Identity Analytics configuration UI (`https://{{HOSTNAME}}/config`)
 
-> **Note:** Any changes in Keycloak, will be erased at newt platform restart
+> Any changes in Keycloak, will be erased at newt platform restart
 
 ## Local Directory configuration
 
@@ -140,23 +138,24 @@ Once connected to the Keycloak Administration Console:
 4. Enter **General options** and **Connection settings**  
     - `Console display name`: a name to identify your Active Directory users repository.
     - `Vendor`: choose `Active Directory`
-    - `Connection URL`: LDAP connection URL of ACtive Directory. It is prefixed by `ldap://` or `ldaps://` followed by the `LDAP Host`. See [gathered information](#gather-information-to-configure-user-federation).
+    - `Connection URL`: LDAP connection URL of ACtive Directory. It is prefixed by `ldap://` or `ldaps://` followed by the `LDAP Host`. See [gathered information](#user-federation-required-information).
     - `Enable StartTLS`: if you choose LDAPS
     - `Use Truststore SPI`: choose option `Only for ldaps`
     - `Connection timeout`: LDAP connection timeout in milliseconds. For instance, 1000.
     - `Bind type`: select `simple` to connect to Active Directory with LDAP service account and password.
-    - `Bind DN`: service account distinguished name. See [gathered information](#gather-information-to-configure-user-federation).
-    - `Bind credentials`: service account credentials name. See [gathered information](#gather-information-to-configure-user-federation).
+    - `Bind DN`: service account distinguished name. See [gathered information](#user-federation-required-information).
+    - `Bind credentials`: service account credentials name. See [gathered information](#user-federation-required-information).
 5. Enter **LDAP searching and updating** fields
     - `Edit mode`: choose the `READ_ONLY` value so that LDAP attributes are one-way synched to Keycloak.
-    - `Users DN`: distinguished name from which users are searched for. See [gathered information](#gather-information-to-configure-user-federation). For example, 
-    - `Username LDAP attribute`: choose the LDAP attribute in Active Directory that fills the Keycloak username. See [gathered information](#gather-information-to-configure-user-federation). For example, the common name `cn`.  
+    - `Users DN`: distinguished name from which users are searched for. See [gathered information](#user-federation-required-information). For example, 
+    - `Username LDAP attribute`: choose the LDAP attribute in Active Directory that fills the Keycloak username. See [gathered information](#user-federation-required-information). For example, the common name `cn`.  
   
     > [!warning]  
     > If you are using standard *iGRC project configuration*, `Username LDAP attribute` must be equal to `sAMAccountName` (same as `username` attribute mapper defined later in this section).  
+    >
     > If user dos not connect with `sAMAccountName` or `email`, then you must adapt the configuration *iGRC project configuration*, the provided iGRC view (`br_portal_identity`), for username to match the corresponding login in the right repository.
 
-    - `Search scope`: recursive or one level user search. See [gathered information](#gather-information-to-configure-user-federation). For example, `Subtree`.
+    - `Search scope`: recursive or one level user search. See [gathered information](#user-federation-required-information). For example, `Subtree`.
     - `Read timeout`: 
     - `Pagination`: set to `On` in case of large number of users.
 6. Enter **Synchronization settings** fields
@@ -201,13 +200,13 @@ You will now check the configuration to create a new mapper for the Active Direc
 3. Click on the card with the `Console display name` you have chosen in the previous section.
 4. Click on `Add mapper` button.
 5. Enter the general mapper fields
-    - `Name`: the mapper will be named `groups`.
-    - `Mapper type`: the type to map LDAP group is `group-ldap-mapper`.
+  - `Name`: the mapper will be named `groups`.
+  - `Mapper type`: the type to map LDAP group is `group-ldap-mapper`.
 6. Enter the `Group LDAP mapper` fields
-    - `LDAP Groups DN`: distinguished name from which groups are searched for. See [gathered information](#gather-information-to-configure-user-federation).
-    - `Preserve Group Inheritence`: set to `Off`. It is mandatory to disable this option if you have multiple parent groups for a group. This is often the case with nested groups.
-    - `User Groups Retrieve Strategy`: choose `GET_GROUPS_FROM_USER_MEMBEROF_ATTRIBUTE` option
-    - `Drop non-existing groups during sync`: set to `On`
+  - `LDAP Groups DN`: distinguished name from which groups are searched for. See [gathered information](#user-federation-required-information).
+  - `Preserve Group Inheritance`: set to `Off`. It is mandatory to disable this option if you have multiple parent groups for a group. This is often the case with nested groups.
+  - `User Groups Retrieve Strategy`: choose `GET_GROUPS_FROM_USER_MEMBEROF_ATTRIBUTE` option
+  - `Drop non-existing groups during sync`: set to `On`
 
 ### Synchronize Users and Groups
 
@@ -221,7 +220,7 @@ Once connected to the Keycloak Administration Console, do the following steps to
 > When you finished the configuration above, the full synchronization is executed and may take long time depending on number of users and groups to synchronize.  
 > `Remove imported` action with READ_ONLY edit mode (and with read-only service account) has no effect. Neither in Active Directory, neither in Keycloak. No users or groups are deleted from both sides even menu entry is enabled.
 
-### User Federation group mapping
+### Roles group mapping
 
 When the synchronization is finalized, you will be able to assign Identity analytics static built-ins roles (Keycloak `Client Role`) to Active Directory groups.
 
@@ -252,17 +251,17 @@ In Keycloak, you can integrate with two main types of Identity Provider, dependi
 
 ### OpenID Connect protocol
 
-#### Prerequisites
+#### OIDC Prerequisites
 
 Ask your Azure Active Directory Administrator to create a new `App Registration` with the following properties
 
 - `Redirect URI`: this is the address of Keycloak instance. This URI looks like `PROTOCOL`://`DNS_SERVICE_NAME`/auth/realms/brainwave/broker/`ALIAS`/endpoint where
-    - `PROTOCOL` is http or https depending on your deployment configuration
-    - `DNS_SERVICE_NAME` is the DNS of the Identity analytics self-managed solution cluster
-    - `ALIAS` is the unique identifier set in Keycloak to this identity provider (remember it for later configuration). We suggest to provide a string that represents the Identity Provider without space or special characters. For instance, `bw-aad-oidc` for Identity Analytics Azure Active Directory using OpenID Connect.
+  - `PROTOCOL` is http or https depending on your deployment configuration
+  - `DNS_SERVICE_NAME` is the DNS of the Identity analytics self-managed solution cluster
+  - `ALIAS` is the unique identifier set in Keycloak to this identity provider (remember it for later configuration). We suggest to provide a string that represents the Identity Provider without space or special characters. For instance, `bw-aad-oidc` for Identity Analytics Azure Active Directory using OpenID Connect.
 - `Token configuration`: ask for optional groups claim with properties
-    - Add `Security groups`.
-    - Add `Group ID` in Access Token.
+  - Add `Security groups`.
+  - Add `Group ID` in Access Token.
 
 Authorizations in Azure Active Directory are supposed to be assigned using security groups. So ask your Azure Active Directory Administrator to create new groups that will be mapped later against static built-in roles
 
@@ -277,10 +276,10 @@ Finally the group `claims` should be configured in the `token configuration`. If
 
 When the administrator finalized the `App Registration` configuration and the groups creation in Azure Active Directory, gather the following information  
 
-- `Application (Client) ID` {#oidc-aad-client-id}
-- `Client Secret` {#oidc-aad-client-secret}
+- `Application (Client) ID` <a id="oidc-aad-client-id">
+- `Client Secret` <a id="oidc-aad-client-secret">
 - Group ID for each of Active Directory group
-- `OpenID Connect Metadata Document` {#oidc-aad-discovery-endpoint}
+- `OpenID Connect Metadata Document` <a id="oidc-aad-discovery-endpoint">
 
 Once connected to the Keycloak Administration Console, do the following steps to configure the Identity Provider, either using OpenID connect or SAML protocol.
 
@@ -383,7 +382,7 @@ Finally the group `claims` should be configured in the `token configuration`. If
 When the administrator finalized the `Enterprise Application` configuration and the groups creation in Azure Active Directory, gather the following information
 
 - List of group IDs for each of Active Directory group.
-- `App Federation Metadata Url` {#saml-aad-metadata-endpoint}.
+- `App Federation Metadata Url` <a id="saml-aad-metadata-endpoint">.
 
 Once connected to the Keycloak Administration Console, do the following steps to configure the Identity Provider, either using OpenID connect or SAML protocol.
 

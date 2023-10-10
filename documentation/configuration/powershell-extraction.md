@@ -1,9 +1,6 @@
 ---
-layout: page
-title: "Powershell extraction configuration"
-parent: "Configuration"
-
-toc: true
+title: Powershell extraction configuration
+description: Configuration requirements to use the powershell extraction tool
 ---
 
 # Powershell extraction configuration
@@ -120,7 +117,7 @@ To run the extractions and get the output ZIP file, open a PowerShell console, c
 bw_data_collector
 ```
 
-> **Note:** Do not forget to run the command in a powershell window run as the desired service account.
+> [!note] Do not forget to run the command in a powershell window run as the desired service account.
 
 The script will execute the extractions described in the `config.json` file and create a ZIP file in the output folder.
 
@@ -129,14 +126,13 @@ The script will execute the extractions described in the `config.json` file and 
 To activate automatic upload of the extracted files you need to configure Powershell script authentication to the Identity Analytics platform, to do so, please follow these steps:
 
 - Go to `https://{{HOSTNAME}}/auth` and login with `setup` account
-
 - Select `Clients` menu, then click on `extractor` client id in the shown list
   
-  ![List of Keycloak clients](images/powershell-extraction/client-id.png)
+![List of Keycloak clients](images/powershell-extraction/client-id.png)
 
 - Go to `Credentials` pane and copy `Client secret`
 
-  ![Client credentials](images/powershell-extraction/secret-id.png)
+![Client credentials](images/powershell-extraction/secret-id.png)
 
 Navigate to the place where you unzipped `bw_data_collector.zip` file and open a terminal in that location.  
 
@@ -154,9 +150,9 @@ The commend will:
 - Add `hostname, realmname, tls and clientid` parameters to the `config.json` file
 - Set `disableUpload` parameter to false if it value is true
   
-> **Important:** Value of `hostname` parameter should not contain `http` or `https`.  
-> **Important:** To disable ssl set `-tls` parameter to `False`.  
-> **Important:** `creds.xml` can only be used by the user session and the machine where the file was created, to run `bw_data_collector.ps1` under another user account you should provide the `creds.xml` again to allow the script to creation a new `PSCredential` compatible with the desired user account.
+> [!warning] Value of `hostname` parameter should not contain `http` or `https`.  
+> [!warning] To disable ssl set `-tls` parameter to `False`.  
+> [!warning] `creds.xml` can only be used by the user session and the machine where the file was created, to run `bw_data_collector.ps1` under another user account you should provide the `creds.xml` again to allow the script to creation a new `PSCredential` compatible with the desired user account.
 
 ### Configuration file
 
@@ -233,13 +229,13 @@ The folder attribute is the destination folder inside the temp folder. The accep
 - `ad`: This is the folder that should be used as the output when extracting Active Directory.
 - `ldap`: This is the folder that should contain LDIF files of LDAP severs different from Active Directory.
 
-> **Note 1:** The folder attribute may contain any value but only the folder specified above will be scanned and loaded in the Identity Analytics data cube. All the files located in an unknown folder will be ignored.
+> The folder attribute may contain any value but only the folder specified above will be scanned and loaded in the Identity Analytics data cube. All the files located in an unknown folder will be ignored.
 
 To disable a copy or a built-in script, you may remove the section from the `config.json` file or change the enable attribute to "false". The section will be ignored when the script `bw_data_collector.ps1` is executed.
 
 The attribute name and `_comment` are not used to identify and document each section. This information is not used by Identity Analytics Platform. The comment is used to describe the data source and the action. The name is an identifier that is used in the log file to reference the section if an error is encountered while performing the action.
 
-> **Note 2:** The values for attributes `action`, `folder`, `script` and `enabled` should be written in lower case.
+> The values for attributes `action`, `folder`, `script` and `enabled` should be written in lower case.
 
 ## Extractions
 
@@ -267,7 +263,7 @@ In the following example, we consider that the contractors are collected via a p
 },
 ```
   
-> **Note:** The extracted file must be accessible on the disk (or on a network disk) from the computer where the script `bw_data_collector.ps1` is executed.  
+> [!note] The extracted file must be accessible on the disk (or on a network disk) from the computer where the script `bw_data_collector.ps1` is executed.  
   
 This configuration section requests the `bw_data_collector.ps1` script to copy the file `C:/HR/extract-current/contractors.csv` to the "hr" folder so that it can be included in the output ZIP.
 
@@ -325,79 +321,62 @@ Only one configuration section is needed to extract Active Directory even if the
   
 Out of the box, the configuration section for Active Directory does not contain information about the credentials to use or the filtering to apply or the domains to extract. There is a list of options to add to the section in order to specify how the Active Directory extraction should be done.  
   
-- `filter`
-An LDAP filter by default it is:
+- `filter`: An LDAP filter by default it is:
   - `((objectcategory=Person)(objectclass=group))`
 
-- `ouFilter`
-Filter on a specific organizationalUnit, should be a valid organizational Unit DN
-  - (example: `OU=Internal Users,DC=intra,DC=test,DC=local`)
-**Note**: This filter will apply on all domains if script launched on several servers (with `--server` option).
+- `ouFilter`: Filter on a specific organizationalUnit, should be a valid organizational Unit DN for example: `OU=Internal Users,DC=intra,DC=test,DC=local`
 
-- `attributesfile`
-File that contains the attribute names to include in the extraction (by default, `attributes.cfg`).
-  - For example: `attributes.txt` where it contains an attribute in each line for example:
-    - dn
-    - objectclass
-    - accountexpires
-    - givenname
-  
-  - By default, this option contains the following attribute names:
-    - objectcategory
-    - objectguid
-    - objectsid
-    - sidhistory
-    - member
-    - objectclass
-    - accountexpires
-    - badpwdcount
-    - displayname
-    - givenname
-    - lastlogon
-    - logoncount
-    - lastlogontimestamp
-    - mail
-    - manager
-    - pwdlastset
-    - samaccountname
-    - sn
-    - whencreated
-    - useraccountcontrol
-    - createtimestamp
-    - description
-    - grouptype
-    - managedby
-    - modifytimestamp
-    - legacyexchangedn
-    - PrimaryGroupID
+> This filter will apply on all domains if script launched on several servers (with `--server` option).
 
-- `servers`
-File that contains in each line a name of an AD server, if the file is not specified, the script will extract all the ActiveDirectory domains data in the current forest.
+- `attributesfile`: File that contains the attribute names to include in the extraction (by default, `attributes.cfg`). For example: `attributes.txt` where it contains an attribute in each line. By default, this option contains the following attribute names:
+  - objectcategory
+  - objectguid
+  - objectsid
+  - sidhistory
+  - member
+  - objectclass
+  - accountexpires
+  - badpwdcount
+  - displayname
+  - givenname
+  - lastlogon
+  - logoncount
+  - lastlogontimestamp
+  - mail
+  - manager
+  - pwdlastset
+  - samaccountname
+  - sn
+  - whencreated
+  - useraccountcontrol
+  - createtimestamp
+  - description
+  - grouptype
+  - managedby
+  - modifytimestamp
+  - legacyexchangedn
+  - PrimaryGroupID
 
-- `credential`
-File containing PSCredential used to extract objects in ActiveDirectory, see example to create and store PSCredential object to a file, if not set current session credential will be used.
+- `servers`: File that contains in each line a name of an AD server, if the file is not specified, the script will extract all the ActiveDirectory domains data in the current forest.
 
-- `logLevel`
-This parameters allow to specify a log level. The default value is `Error` .Possible values are:
+- `credential`: File containing PSCredential used to extract objects in ActiveDirectory, see example to create and store PSCredential object to a file, if not set current session credential will be used.
+
+- `logLevel`: This parameters allow to specify a log level. The default value is `Error`.Possible values are:
   - Error
   - Warning
   - Info
   - Debug
 
-- `errAction`
-Specify the action to perform if an error occur. The default value is `Stop`. The possible values are:
+- `errAction`: Specify the action to perform if an error occur. The default value is `Stop`. The possible values are:
   - Continue
   - SilentlyContinue
   - Stop
 
-- `port`
-LDAP server port. The default value is 389.
+- `port`: LDAP server port. The default value is 389.
 
-- `authType`
-Authentication method to use in LDAP connection, for more details refer to [https://msdn.microsoft.com/fr-fr/library/system.directoryservices.protocols.authtype(v=vs.110).aspx]
+- `authType`: Authentication method to use in LDAP connection, for more details refer to [https://msdn.microsoft.com/fr-fr/library/system.directoryservices.protocols.authtype(v=vs.110).aspx]
 
-- `useSSL`
-Boolean value to activate SecureSocketLayer on LDAP connection. The default value is 'False'.
+- `useSSL`: Boolean value to activate SecureSocketLayer on LDAP connection. The default value is 'False'.
 
 Here is a sample of the configuration to extract two servers:
 
@@ -471,23 +450,18 @@ By default, the script will use the following attributes mapping between HR attr
 
 Some options are also available to change the behavior of the extraction. The options are very similar to the Active Directory extraction for users and groups. For this HR extraction from Active Directory, all the options described for the users and groups extraction may be used plus one more: `customHrAttributes`. The following section shows all options and their description
 
-- `filter`
-An LDAP filter by default it is:
-  - `(objectcategory=Person)`
+- `filter`: An LDAP filter by default it is:`(objectcategory=Person)`
 
-- `ouFilter`
-Filter on a specific organizationalUnit, should be a valid organizational Unit DN
-  - (example: `OU=Internal Users,DC=intra,DC=test,DC=local`)
-**Note**: This filter will apply on all domains if script launched on several servers (with `--server` option).
+- `ouFilter`: Filter on a specific organizationalUnit, should be a valid organizational Unit DN. example: `OU=Internal Users,DC=intra,DC=test,DC=local`
 
-- `attributesfile`
-File that contains the attribute names to include in the extraction (by default, `attributes.cfg`).
+> This filter will apply on all domains if script launched on several servers (with `--server` option).
+
+- `attributesfile`: File that contains the attribute names to include in the extraction (by default, `attributes.cfg`).
   - For example: `attributes.txt` where it contains an attribute in each line for example:
     - dn
     - objectclass
     - accountexpires
-    - givenname
-  
+    - givenname 
   - By default, this option contains the following attribute names:
     - objectcategory
     - objectguid
@@ -517,36 +491,28 @@ File that contains the attribute names to include in the extraction (by default,
     - legacyexchangedn
     - PrimaryGroupID
 
-- `servers`
-File that contains in each line a name of an AD server, if the file is not specified, the script will extract all the ActiveDirectory domains data in the current forest.
+- `servers`: File that contains in each line a name of an AD server, if the file is not specified, the script will extract all the ActiveDirectory domains data in the current forest.
 
-- `credential`
-File containing PSCredential used to extract objects in ActiveDirectory, see example to create and store PSCredential object to a file, if not set current session credential will be used.
+- `credential`: File containing PSCredential used to extract objects in ActiveDirectory, see example to create and store PSCredential object to a file, if not set current session credential will be used.
 
-- `logLevel`
-This parameters allow to specify a log level. The default value is `Error` .Possible values are:
+- `logLevel`: This parameters allow to specify a log level. The default value is `Error`.Possible values are:
   - Error
   - Warning
   - Info
   - Debug
 
-- `errAction`
-Specify the action to perform if an error occur. The default value is `Stop`. The possible values are:
+- `errAction`: Specify the action to perform if an error occur. The default value is `Stop`. The possible values are:
   - Continue
   - SilentlyContinue
   - Stop
 
-- `port`
-LDAP server port. The default value is 389.
+- `port`: LDAP server port. The default value is 389.
 
-- `authType`
-Authentication method to use in LDAP connection, for more details refer to [https://msdn.microsoft.com/fr-fr/library/system.directoryservices.protocols.authtype(v=vs.110).aspx]
+- `authType`: Authentication method to use in LDAP connection, for more details refer to [https://msdn.microsoft.com/fr-fr/library/system.directoryservices.protocols.authtype(v=vs.110).aspx]
 
-- `useSSL`
-Boolean value to activate SecureSocketLayer on LDAP connection. The default value is 'False'.
+- `useSSL`: Boolean value to activate SecureSocketLayer on LDAP connection. The default value is 'False'.
 
-- `customHrAttributes`
-Path to a file that contains a custom mapping between HR attributes and AD attributes. 
+- `customHrAttributes`: Path to a file that contains a custom mapping between HR attributes and AD attributes.  
 
 The file specified in the option `customHrAttributes` can be used to override the default mapping. The file must be a CSV file and have the following format:
 
@@ -570,7 +536,7 @@ The following command shows how to create a PSCredential and store it in a file 
 Get-Credential -UserName test\local -Message "Credential" | Export-CliXml credential.xml
 ```
 
-> **Note:** Do not forget to run the command in a powershell on the behalf of a service account.
+> [!note] Do not forget to run the command in a powershell on the behalf of a service account.
 
 ## Task Scheduler and Credentials
 
@@ -760,12 +726,17 @@ The following table describes the columns required by the model.
 | reconciliation2         | GEOFFRAY183           | No         | reconciliation key #2                       |
 | reconciliation3         | DGEOFFRAY183          | No         | reconciliation key #3                       |
 
-> **Note 1:** If data is not available for a certain column, it is best to leave the column header present. The header row should not be changed.  
-> **Note 2:** The case of the header (uppercase/lowercase) is important. For example, if a column heading is changed to capital letters, the column will no longer be recognized.  
-> **Note 3:** All dates should use the European format (DD/MM/YYYY)  
-> **Note 4:** The active column is not mandatory. If empty, the identity is considered as inactive!  
-> **Note 5:** Depending on Excel version and language used, the internal and active columns may appear differently and with a different case. The real value should be true or false.  
-> **Note 6:** The last 3 columns about reconciliation are explained in the chapter "Account Owners".  
+> If data is not available for a certain column, it is best to leave the column header present. The header row should not be changed.  
+
+> The case of the header (uppercase/lowercase) is important. For example, if a column heading is changed to capital letters, the column will no longer be recognized.  
+
+> All dates should use the European format (DD/MM/YYYY)  
+
+> The active column is not mandatory. If empty, the identity is considered as inactive!  
+
+> Depending on Excel version and language used, the internal and active columns may appear differently and with a different case. The real value should be true or false.  
+
+> The last 3 columns about reconciliation are explained in the chapter "Account Owners".  
 
 #### Individuals who have left the company
   
@@ -823,13 +794,9 @@ Test-ScriptFileInfo .\bw_data_collector.ps1
 #### Upgrade steps
 
 - Donwload the latest version of `bw_data_collector.ps1`
-
 - Copy the zip file to the directory where your `bw_data_collector.ps1` is installed
-
 - Unzip the downloaded package and override existing files
-
 - Configuration file config.json will not be overitten
-
 - Chek the new version to validate the migration
 
 ![After upgrade](images/powershell-extraction/after-upgrade.png)

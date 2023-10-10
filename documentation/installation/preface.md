@@ -1,16 +1,24 @@
 ---
-layout: page
-title: "Debug options"
-parent: "Installation"
-
-toc: true 
+title: Installation
+description: Guides to how to install Identity Analytics Self-Managed solution 
 ---
 
-# Debug options
+# Identity Analytics Self-managed installation
+
+Installation of the self-managed solution is only supported for:
+
+- [Debian](debian) in a production environment
+- [Windows desktop](windows-desktop) for dev and demo purposes
+
+Before installing the self-managed solution please refer to the [installation requirements](../before-installation/preface) page to validate a your system requirements and desired installation method.  
+
+## Debug options
 
 > The following documentation is not to be used in a PROD environnement. This documentation is provided for demonstration or development environments.  
 
-## Activate debug options  
+The following action are to be executed after having installed the self-managed solution for Identity Analytics.  
+
+### Activate debug options  
 
 It is possible to enable debug options in the global tab of the `/config` frontend.  
 
@@ -23,7 +31,7 @@ This option adds two additional containers:
 
 These two containers help the solution administrator when developing or demonstrating the product.  
 
-## Installation of containers
+### Installation of containers
 
 To install the containers once the option is activated it is required to:  
 

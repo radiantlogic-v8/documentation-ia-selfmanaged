@@ -1,9 +1,6 @@
 ---
-layout: page
-title: "System Requirements"
-parent: "Before installation"
-
-toc: true
+title: System Requirements
+description: List of system requirements for the self-managed solution
 ---
 
 # System requirements
@@ -76,7 +73,7 @@ Minimal size 100GB. This folder includes all Docker volumes. The different datab
 
 Minimal size 20GB. This folder contains all docker daemon data, including the images. As a rule, all images take around 5 to 6GB of disk space.
 
-> **Note:** It is possible to remove older versions by using the `--clean-images` option when upgrading the application: `brainwave admin upgrade --clean-images`
+> [!note] It is possible to remove older versions by using the `--clean-images` option when upgrading the application: `brainwave admin upgrade --clean-images`
 
 It is possible to customize the location of Docker's Daemon data directory. Please refer to Docker's official documentation for more information:
 
