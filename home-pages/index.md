@@ -40,16 +40,16 @@ IAP has been built with a set of general principles in mind, please find them be
 
 <section>
   
-  > [Identity Analytics Enduser Guide](/ia/iap_2.0/identity-analytics/enduser-guide/01-introduction)  
+  > [Identity Analytics Enduser Guide](/ia/iap-2.0/identity-analytics/enduser-guide/01-introduction)  
   > This document describes the basic principles of IAP (Identity Analytics Platform) interfaces and dashboards.  
 
-  > [Identity Analytics Integration Guide](/ia/iap_2.0/identity-analytics/integration-guide/01-introduction)
+  > [Identity Analytics Integration Guide](/ia/iap-2.0/identity-analytics/integration-guide/01-introduction)
   > This document describes the basic principles of IAP (Identity Analytics Platform) as well as the best practices to follow to fulfill the data & to configure the roles.  
 
-  > [Identity Analytics Access Review Guide](/ia/iap_2.0/identity-analytics/uar-guide/01-introduction)
+  > [Identity Analytics Access Review Guide](/ia/iap-2.0/identity-analytics/uar-guide/01-introduction)
   > This document describes the basic principles of self-service, Compliance driven Access, Review in IAS (Identity Analytics Services) as well as the best practices to follow to configure a review and manage the remediations.  
 
-  > [Identity Analytics Release](/ia/iap_2.0/identity-analytics/iap-release/01-iap-release-overview)
+  > [Identity Analytics Release](/ia/iap-2.0/identity-analytics/iap-release/01-iap-release-overview)
   > This document provides information on the different releases of IAP, including the compatibility matrix and the release notes for each version.  
 
 </section>
@@ -58,7 +58,7 @@ IAP has been built with a set of general principles in mind, please find them be
 
 <section>
   
-  > [Controls browser](/ia/iap_2.0/controls-browser/controls-browser)  
+  > [Controls browser](/ia/iap-2.0/controls-browser/controls-browser)  
   > The Controls Browser is built to provide an overview of the current risks in your Information System. It provides administrators with an overview of the controls and associated defects (discrepancies) and when possible the means to remediate the risk.  
 
 </section>
@@ -80,7 +80,7 @@ For customers under maintenance/subscription contract as well as official partne
 
 <section>
   
-  > [Release Notes](downloads/01-downloads)  
+  > [Release Notes](/ia/descartes/downloads/01-downloads)  
   > This document provides information on the different releases of iGRCanalytics, including the supported environments and the release notes for each version.  
 
 </section>
@@ -100,28 +100,28 @@ Please note that the "standard" installation method of installing the solution i
 
 <section>
   
-  > [Pre-requisites](before-installation/preface)  
+  > [Pre-requisites](/ia/version-1.2/before-installation/preface)  
   > The included page will provide you with all the necessary information and processes to implement before the installation of the self-managed solution of Identity Analytics.  
 
-  > [Configuration](configuration/config-ui)
+  > [Configuration](/ia/version-1.2/configuration/config-ui)
   > Learn how to configure the self-managed solution of Identity Analytics.  
 
-  > [Installation guide](installation/preface)
+  > [Installation guide](/ia/version-1.2/installation/preface)
   > Learn how to install the self-managed solution on the different supported environments.  
 
-  > [RadiantOne integration](integrations/radiantone)
+  > [RadiantOne integration](/ia/version-1.2/integrations/radiantone)
   > Learn how to integrate your Identity Data Management solution with Identity Analytics smoothly.  
 
-  > [Azure Connector configuration](connectors/azure-connector)
+  > [Azure Connector configuration](/ia/version-1.2/connectors/azure-connector)
   > Learn how to configure your connection to an Azure data source to ingest and audit your azure data.  
 
-  > [Controller user guide](containers/controller)
+  > [Controller user guide](/ia/version-1.2/containers/controller)
   > The linked page is the user guide for the controller. This documentation provides all the necessary information on how to use the controller from email configuration to extraction testing.  
 
-  > [Run ops](run-ops/preface)
+  > [Run ops](/ia/version-1.2/run-ops/preface)
   > Learn all the necessary commands to ensure a successful run and maintenance of the self-managed solution in time.  
 
-  > [Troubleshooting](troubleshooting/troubleshooting)
+  > [Troubleshooting](/ia/version-1.2/troubleshooting/troubleshooting)
   > Theses pages include the symptoms and the solutions of common errors encountered when running the solution.  
 
 </section>
