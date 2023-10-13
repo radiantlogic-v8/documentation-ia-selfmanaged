@@ -109,7 +109,7 @@ Please note that the "standard" installation method of installing the solution i
   > [Installation guide](/ia/version-1.2/installation/preface)
   > Learn how to install the self-managed solution on the different supported environments.  
 
-  > [RadiantOne integration](/ia/version-1.2/integrations/radiantone)
+  > [RadiantOne integration](/ia/version-1.2/integrations/idm)
   > Learn how to integrate your Identity Data Management solution with Identity Analytics smoothly.  
 
   > [Azure Connector configuration](/ia/version-1.2/connectors/azure-connector)
