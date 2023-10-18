@@ -85,6 +85,15 @@ For customers under maintenance/subscription contract as well as official partne
 
 </section>
 
+## Legacy documentation
+
+<section>
+  
+  > [Legacy documentation site](https://documentation.brainwavegrc.com/)  
+  > This section will redirect you to the legacy documentation of Identity Analytics. This site will continue to host the documentation for Identity Analytics while the documentation sites are being merged.  
+
+</section>
+
 </tabpanel>
 <tabpanel>
 
