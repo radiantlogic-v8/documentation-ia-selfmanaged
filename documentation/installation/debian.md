@@ -131,7 +131,7 @@ cp brainwave.local.crt /etc/brainwave/certificates/brainwave.local.crt
 
 Please refer to the following page for more information:
 
-[SSL configuration page](configuration/ssl-configuration)
+[SSL configuration page](../configuration/ssl-configuration)
 
 ## Starting the Services
 
