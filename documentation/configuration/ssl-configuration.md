@@ -75,4 +75,4 @@ openssl x509 -signkey demo.acme.com.key -in demo.acme.com.csr -req -days 365 -ou
 openssl rsa -in demo.acme.com.key -out demo.acme.com.key
 ```
 
-[!warning] These commands are provided as an example and **MUST** not be used in a Prod environment.  
+> [!warning] These commands are provided as an example and **MUST** not be used in a Prod environment.  
