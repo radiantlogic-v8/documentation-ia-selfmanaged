@@ -51,7 +51,7 @@ docker login repository.brainwavegrc.com
 To install the solution in desktop mode please use the following command:  
 
 ```sh
-brainwave brainwave install --project-name brainwave --desktop
+brainwave install --project-name brainwave --desktop
 brainwave pull
 ```
 
