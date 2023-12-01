@@ -118,7 +118,7 @@ Please note that the "standard" installation method of installing the solution i
   > [Installation guide](/ia/version-1.4/installation/preface)
   > Learn how to install the self-managed solution on the different supported environments.  
 
-  > [Identity Data Management integration](/ia/version-1.4/integrations/idm)
+  > [Identity Data Management integration](/ia/version-1.4/integrations/iddm)
   > Learn how to integrate your Identity Data Management solution with Identity Analytics smoothly.  
 
   > [Azure Connector configuration](/ia/version-1.4/connectors/azure-connector)
