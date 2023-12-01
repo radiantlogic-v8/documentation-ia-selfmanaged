@@ -3,9 +3,9 @@ title: Identity Analytics self-managed Guide
 description: Guide to help build and run Identity Analytic's self-managed solution
 ---
 
-<tabs>
+<<tabs>
   <tablist>
-    <tab>Guides</tab>
+    <tab>Knowledge</tab>
     <tab>Developer</tab>
     <tab>Self-Managed</tab>
   </tablist>
@@ -13,44 +13,23 @@ description: Guide to help build and run Identity Analytic's self-managed soluti
   <tabpanels>
     <tabpanel>
 
-# Welcome to Identity Analytics guides
+# Welcome to Identity Analytics
 
-This document describes the basic principles of IAP (Identity Analytics Platform) interfaces and dashboards.
-
-Starting with Identity Analytics version Braille, the solution comes with a dedicated web experience called IAP (Identity Analytics Platform). The Identity Analytics Platform replaces the former webportal of Brainwave GRC.  
-
-The main difference is that IAP comes with a series of off-the-shelf analytics/reports/controls/... to provide more value to the end-users.
-
-IAP is also in an active development phase at RadiantLogic, thus by deploying IAP, not only the end user will benefit from a lot of off-the-shelf value, but he will also benefit of regular updates/improvements.
-
-## Manifesto
-
-IAP has been built with a set of general principles in mind, please find them below:
-
-- **FAST:** results within 5 seconds, metadata powered
-- **EFFICIENT:** All answers 3 clicks away
-- **CONSISTENT:** Same navigation & presentation logic
-- **SIMPLE** yet **POWERFUL**: Intuitive UX, rich analytics
-- **RICH:** All concepts are leveraged, details are accessible when needed
-- **TEMPORAL:** All UI include temporal analysis
-- **SECURITY BY DESIGN:** You cannot see more than what is needed based on the your management responsibilities
-- **EXTENSIBLE:** Easy to extend through 'Tags'  
-
-## Identity Analytics
-
+Correlate your identity data and add analytics to improve data quality, properly respond to audit recommendations and automate IT controls. Get a full overview of access chains with all the identity context: gain key visibility into all human and non-human identities to simplify user access reviews and ensure that your company’s entitlements are compliant. Browse below to learn more about the capabilities and components that comprise Identity Analytics and link to the guides to help get you started.  
+  
 <section>
   
-  > [Identity Analytics Enduser Guide](/ia/iap-2.0/identity-analytics/enduser-guide/01-introduction)  
-  > This document describes the basic principles of IAP (Identity Analytics Platform) interfaces and dashboards.  
+  > [Portal](/ia/iap-2.0/identity-analytics/enduser-guide/01-introduction)  
+  > This section describes the basic principles of IAP (Identity Analytics Platform) interfaces and dashboards.  
 
-  > [Identity Analytics Integration Guide](/ia/iap-2.0/identity-analytics/integration-guide/01-introduction)
-  > This document describes the basic principles of IAP (Identity Analytics Platform) as well as the best practices to follow to fulfill the data & to configure the roles.  
+  > [Best Practices](/ia/iap-2.0/identity-analytics/integration-guide/01-introduction)
+  > This section describes the best practices to follow to fulfill the data & to configure the roles.  
 
-  > [Identity Analytics Access Review Guide](/ia/iap-2.0/identity-analytics/uar-guide/01-introduction)
-  > This document describes the basic principles of self-service, Compliance driven Access, Review in IAS (Identity Analytics Services) as well as the best practices to follow to configure a review and manage the remediations.  
+  > [User Access Reviews](/ia/iap-2.0/identity-analytics/uar-guide/01-introduction)
+  > This section describes the basic principles of self-service compliance driven User Access Review as well as the best practices to configure reviews and manage remediations.  
 
-  > [Identity Analytics Release](/ia/iap-2.0/identity-analytics/iap-release/01-iap-release-overview)
-  > This document provides information on the different releases of IAP, including the compatibility matrix and the release notes for each version.  
+  > [Release Notes](/ia/iap-2.0/identity-analytics/iap-release/01-iap-release-overview)
+  > This section provides information on the different releases of IAP, including the compatibility matrix and the release notes for each version.  
 
 </section>
 
@@ -58,8 +37,8 @@ IAP has been built with a set of general principles in mind, please find them be
 
 <section>
   
-  > [Controls browser](/ia/iap-2.0/controls-browser/controls-browser)  
-  > The Controls Browser is built to provide an overview of the current risks in your Information System. It provides administrators with an overview of the controls and associated defects (discrepancies) and when possible the means to remediate the risk.  
+  > [Controls Browser](/ia/iap-2.0/controls-browser/controls-browser)  
+  > Controls Browser provides administrators with an overview of the configured controls and associated defects to understand current risk.  
 
 </section>
 
@@ -82,6 +61,15 @@ For customers under maintenance/subscription contract as well as official partne
   
   > [Release Notes](/ia/descartes/downloads/01-downloads)  
   > This document provides information on the different releases of iGRCanalytics, including the supported environments and the release notes for each version.  
+
+</section>
+
+## Legacy documentation
+
+<section>
+  
+  > [Legacy documentation site](https://documentation.brainwavegrc.com/)  
+  > This section will redirect you to the legacy documentation of Identity Analytics. This site will continue to host the documentation for Identity Analytics while the documentation sites are being merged.  
 
 </section>
 
@@ -109,7 +97,7 @@ Please note that the "standard" installation method of installing the solution i
   > [Installation guide](/ia/version-1.2/installation/preface)
   > Learn how to install the self-managed solution on the different supported environments.  
 
-  > [RadiantOne integration](/ia/version-1.2/integrations/idm)
+  > [Identity Data Management integration](/ia/version-1.2/integrations/iddm)
   > Learn how to integrate your Identity Data Management solution with Identity Analytics smoothly.  
 
   > [Azure Connector configuration](/ia/version-1.2/connectors/azure-connector)
