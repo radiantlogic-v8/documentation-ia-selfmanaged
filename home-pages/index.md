@@ -3,7 +3,7 @@ title: Identity Analytics self-managed Guide
 description: Guide to help build and run Identity Analytic's self-managed solution
 ---
 
-<<tabs>
+<tabs>
   <tablist>
     <tab>Knowledge</tab>
     <tab>Developer</tab>
