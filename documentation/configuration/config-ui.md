@@ -168,7 +168,7 @@ For each container (Batch, extraction and portal), you can configure the frequen
 
 ## Uploads
 
-![Uploads Page](images/config-interface/uploads.png)
+![Uploads Page](images/config-interface/license-upload.png)
 
 This page allows you to upload your Identity Analytics license file.
 
