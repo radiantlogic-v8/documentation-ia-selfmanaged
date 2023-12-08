@@ -206,7 +206,7 @@ Secure portal stop timeout (ms): When the portal is stopped, it closes securely 
 
 ## Uploads
 
-![Uploads Page](images/config-interface/uploads.png)
+![Uploads Page](images/config-interface/license-upload.png)
 
 This page allows you to upload your license file.
 
