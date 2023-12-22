@@ -58,16 +58,109 @@ For customers under maintenance/subscription contract as well as official partne
 ## IGRCanalytics
 
 <section>
-  
+
   > [Release Notes](/ia/descartes/downloads/01-downloads)  
   > This document provides information on the different releases of iGRCanalytics, including the supported environments and the release notes for each version.  
+
+</section>
+
+## Features
+
+<section>
+
+  > [Getting started](/ia/descartes/igrc-platform/getting-started)  
+  > The one stop shop to getting started in using Identity Analytics
+
+  > [Installation Guide](/ia/descartes/igrc-platform/installation-and-deployment)  
+  > The on premise installation guide, including configuration recommendations.
+
+  > [Timeslots and Execution Plan](/ia/descartes/igrc-platform/timeslots-and-execution-plan)  
+  > All information on how to understand the notion of a timeslots and the execution plan
+
+  > [The technical configuration](/ia/descartes/igrc-platform/technical-configuration)  
+  > The description of the technical configuration usage and best practices
+
+  > [Data discovery](/ia/descartes/igrc-platform/data-discovery)  
+  > This document provides information on the creation, installation, usage of the data discovery feature.  
+
+  > [Data collector](/ia/descartes/igrc-platform/collector)  
+  > This document provides information on the creation, installation, usage of the data collector engine.  
+
+  > [Silos](/ia/descartes/igrc-platform/silos)  
+  > This document provides information on the creation, installation, usage of silos.  
+
+  > [Audit rules](/ia/descartes/igrc-platform/audit-rules)  
+  > This document provides information on the creation, installation, usage of audit rules.  
+
+  > [Audit views](/ia/descartes/igrc-platform/views)  
+  > This document provides information on the creation, installation, usage of audit views.  
+
+  > [Business views](/ia/descartes/igrc-platform/business-view)  
+  > This document provides information on the creation, installation, usage of Business views.  
+
+  > [Controls](/ia/descartes/igrc-platform/controls)  
+  > This document provides information on the creation, installation, usage of controls.  
+
+  > [Reconciliation policy](/ia/descartes/igrc-platform/reconciliation)  
+  > This document provides information on the creation, installation, usage of reconciliation rules and policies.  
+
+  > [Manager Policies](/ia/descartes/igrc-platform/manager-policy)  
+  > This document provides information on the creation, installation, usage of manager policies.  
+
+  > [Metadata](/ia/descartes/igrc-platform/metadata)  
+  > This document provides information on how to extend IA data model using metadata.  
+
+  > [Pages](/ia/descartes/igrc-platform/pages)  
+  > This document provides information on Pages. The in house data visualization technology that leverages the Identity Ledger data through the web portal.
+
+  > [Reports](/ia/descartes/igrc-platform/reports)  
+  > This document provides information on the creation, installation, usage of controls.  
+
+  > [Dashboards](/ia/descartes/igrc-platform/dashboards)  
+  > This document provides information on the creation, installation, usage of dashboards.  
+
+  > [Theoretical Rights](/ia/descartes/igrc-platform/theoretical-rights)  
+  > This document provides information on the creation, installation, usage of theoretical rights.  
+
+  > [Workflows](/ia/descartes/igrc-platform/workflow)  
+  > This document provides detailed information on the workflow engin. Including guides on the creation, the configuration and run.  
+
+  > [Audit logs](/ia/descartes/igrc-platform/audit-logs)  
+  > This document provides information on the creation, installation, usage and of Auditlogs, the productions engine to ingest and query application logs.
+
+  > [Notification rules](/ia/descartes/igrc-platform/notification-rules)  
+  > This document provides information on the creation, installation, usage of notification rules.  
+
+</section>
+
+## Wizards
+
+<section>
+
+  > [Add-ons](/ia/descartes/igrc-platform/add-ons)  
+  > This document provides information on the creation, installation, usage and migration of project elements names Add-ons.  
+
+  > [Collect wizard](/ia/descartes/igrc-platform/collect-wizard)  
+  > This is a guide to using the collect wizard, a tool to automatically generate data discovery files and collect lines.  
+
+  > [Review wizard](/ia/descartes/igrc-platform/review-wizard)  
+  > This is a guide to using the review wizard, a tool to automatically generate standard workflows.  
+
+</section>
+
+## Webportal
+
+<section>
+
+  > [Smart search](/ia/descartes/igrc-platform/smart-search)  
+  > This document provides information on the creation, installation, usage and migration of the smart search in the portal.  
 
 </section>
 
 ## Legacy documentation
 
 <section>
-  
+
   > [Legacy documentation site](https://documentation.brainwavegrc.com/)  
   > This section will redirect you to the legacy documentation of Identity Analytics. This site will continue to host the documentation for Identity Analytics while the documentation sites are being merged.  
 
