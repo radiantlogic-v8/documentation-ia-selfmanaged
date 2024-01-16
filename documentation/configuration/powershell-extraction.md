@@ -139,7 +139,7 @@ Navigate to the place where you unzipped `bw_data_collector.zip` file and open a
 Execute the following command to add authentication attributes to `config.json` and create a secure file containing the copied `Client secret` from `Keycloack`.  
 
 ```powershell
-.\bw_data_collector.ps1 -createCreds True -hostname "HOSTNAME" -realmname "brainwave" -tls True -clientid "extractor"
+.\bw_data_collector.ps1 -createCreds $true -hostname "HOSTNAME" -realmname "brainwave" -tls $true -clientid "extractor"
 ```
 
 Copy paste `Client secret` to the terminal when requested.
