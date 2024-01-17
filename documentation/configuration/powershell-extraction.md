@@ -128,7 +128,7 @@ To activate automatic upload of the extracted files you need to configure Powers
 - Go to `https://{{HOSTNAME}}/auth` and login with `setup` account
 - Select `Clients` menu, then click on `extractor` client id in the shown list
   
-![List of Keycloak clients](images/powershell-extraction/client-id.png)
+![List of Keycloak clients](images/powershell-extraction/client-id-2.png)
 
 - Go to `Credentials` pane and copy `Client secret`
 
@@ -150,9 +150,11 @@ The commend will:
 - Add `hostname, realmname, tls and clientid` parameters to the `config.json` file
 - Set `disableUpload` parameter to false if it value is true
   
-> [!warning] Value of `hostname` parameter should not contain `http` or `https`.  
-> [!warning] To disable ssl set `-tls` parameter to `False`.  
-> [!warning] `creds.xml` can only be used by the user session and the machine where the file was created, to run `bw_data_collector.ps1` under another user account you should provide the `creds.xml` again to allow the script to creation a new `PSCredential` compatible with the desired user account.
+> [!warning]
+>
+> - Value of `hostname` parameter should not contain `http` or `https`.  
+> - To disable ssl set `-tls` parameter to `False`.  
+> - `creds.xml` can only be used by the user session and the machine where the file was created, to run `bw_data_collector.ps1` under another user account you should provide the `creds.xml` again to allow the script to creation a new `PSCredential` compatible with the desired user account.
 
 ### Configuration file
 
