@@ -23,7 +23,7 @@ When creating the ZIP file, the PowerShell script also adds some files generated
 
 Download the `bw_data_collector.zip` using the following direct link:
 
-[https://repository.brainwavegrc.com/Brainwave/-/packages/generic/brainwave_data_collector/1.2](https://repository.brainwavegrc.com/Brainwave/-/packages/generic/brainwave_data_collector/1.2)
+[https://repository.brainwavegrc.com/Brainwave/-/packages/generic/brainwave_data_collector/1.4](https://repository.brainwavegrc.com/Brainwave/-/packages/generic/brainwave_data_collector/1.4)
 
 `bw_data_collector.zip` should be unzipped in a folder that has write access as the PowerShell script generates the output, along with temporary files, inside the installation folder.  
 
@@ -162,52 +162,88 @@ Here is a sample of a configuration file:
 
 ```json
 {
-  "disableUpload": true,
-  "outputDirectory": "C:\\Temp\\onezip",
-  "zipFileName": "RandD_ENV",
-  "proxyUri":"",
-  "proxyCredential":"",
-  "configs": [
+  "auth_hostname":  "localhost",
+  "auth_realmname":  "brainwave",
+  "auth_tls":  false,
+  "disableUpload":  true,
+  "outputDirectory":  "C:\\Temp\\onezip",
+  "notificationEmail":  "user@company.local",
+  "notificationLang":  "en",
+  "proxyUri":  "",
+  "proxyCredential":  "",
+  "zipOutputFiles":  true,
+  "forceUpload":  false,
+  "configs":  [
     {
-      "name": "hr-1",
-      "enabled": true,
-      "file": "../../importfiles/test-file-copy/hr/*.xlsx",
-      "folder": "hr",
-      "action": "copy"
+      "name":  "hr-1",
+      "enabled":  true,
+      "file":  "C:/Applications/OneZip/tests/data_copy/hr/*",
+      "csv_converter_config":  "./tools/bw_csv_converter_*/hr-template.properties",
+      "folder":  "hr",
+      "action":  "copy"
     },
     {
-      "_comment": "Use AD as HR source, get users list using ad script",
-      "name": "ad-hr-1",
-      "enabled": false,
-      "folder": "hr",
-      "action": "script"
+      "name":  "application-1",
+      "enabled":  true,
+      "file":  "C:/Applications/OneZip/tests/data_copy/applications/*.csv",
+      "folder":  "applications",
+      "action":  "copy"
     },
     {
-      "_comment": "Extract AD data of the current forest with the current credentials",
-      "name": "ad-1",
-      "enabled": true,
-      "folder": "ad",
-      "action": "script"
+      "name":  "merge-1",
+      "enabled":  true,
+      "file":  "./tests/data_copy/zip/Data.zip",
+      "action":  "merge"
     },
     {
-      "_comment": "Embed the LDIF into the output ZIP file",
-      "name": "domain",
-      "enabled": true,
-      "file": "C:/LDAP/extract-current/domain.ldif",
-      "folder": "ldap",
-      "action": "copy"
+      "_comment":  "Extract AD data of the current forest with the current Creds",
+      "name":  "ad-1",
+      "enabled":  true,
+      "script":  "ad",
+      "folder":  "ad",
+      "credential":  "C:/Applications/OneZip/tests/creds/acme_credential.xml",
+      "servers":  "C:/Applications/OneZip/tests/config/domain_controller.txt",
+      "action":  "script"
+    },
+    {
+      "_comment":  "Use AD as HR source, get users list using ad script",
+      "name":  "ad-hr-1",
+      "enabled":  true,
+      "script":  "hr",
+      "folder":  "hr",
+      "credential":  "C:/Applications/OneZip/tests/creds/acme_credential.xml",
+      "servers":  "C:/Applications/OneZip/tests/config/domain_controller.txt",
+      "csv_converter_config":  "./tools/bw_csv_converter_*/adhr-template.properties",
+      "action":  "script"
     }
   ]
 }
+
 ```
 
 The main configuration parameters are:  
 
+- `auth_hostname`: Hostname of the server on which to upload the files. This is the server running the selfmanaged solution
+- `auth_realmname`: The authorization realm name as defined in Keycloak. By default this value should be set to `brainwave`
+- `auth_tls`: Upload using https. This is the recommended parameter to use un a Prod environment
 - `disableUpload`: boolean value to disable zip upload, should be false to activate upload.
 - `outputDirectory`: path where the zip will be generated, by default the zip will be stored in root directory under `output` folder, this parameter should be set on decentralized extraction environment to be able to move the generated Zip file to a desired directory (ex:a shared folder).
+- `notificationEmail`: Email of the person to notify in case of success or failure of the upload
+- `notificationLang`: Email notification language. Supported locals are `fr` and `en`
 - `zipFileName`: parameter to set the Zip file name without the extension, default value is `DataFile`.
 - `proxyUri`: parameter to set a proxy URL if needed.
 - `proxyCredential`: parameter to set a PScredential file path for proxy authentication if needed, if not set current user credential will be used.
+- `zipOutputFiles`: Boolean to toggle the creation of a Zip archive of on upload
+- `forceUpload`: Force the upload of the importfiles even if an extraction failed.
+
+> [!warning] In the case of an instance running the script to upload to an EOC environment changes are required in the config.json file:  
+>
+> - `auth_hostname`: The base URL to the EOC environment. For example: `"auth_hostname": "ia-rlqa-usw2.dev01.radiantlogic.io",`  
+> - `auth_realmname`: The environment name that is used to provision the authorization realm. For example: `"auth_realmname": "rlqa-usw2-mq01",`  
+>
+> An additional parameter is required to allow to upload the files to the correct authorization context:  
+>
+> - `auth_context`: This value should be set to the environment name. For example: `"auth_context": "rlqa-usw2-mq01",`
 
 The `config.json` should contain different sections under **configs** block:  
 
@@ -374,7 +410,7 @@ Out of the box, the configuration section for Active Directory does not contain 
 
 - `port`: LDAP server port. The default value is 389.
 
-- `authType`: Authentication method to use in LDAP connection, for more details refer to [https://msdn.microsoft.com/fr-fr/library/system.directoryservices.protocols.authtype(v=vs.110).aspx]
+- `authType`: Authentication method to use in LDAP connection, for more details refer to [https://msdn.microsoft.com/fr-fr/library/system.directoryservices.protocols.authtype(v=vs.110).aspx](https://msdn.microsoft.com/fr-fr/library/system.directoryservices.protocols.authtype(v=vs.110).aspx)
 
 - `useSSL`: Boolean value to activate SecureSocketLayer on LDAP connection. The default value is 'False'.
 
@@ -461,7 +497,7 @@ Some options are also available to change the behavior of the extraction. The op
     - dn
     - objectclass
     - accountexpires
-    - givenname 
+    - givenname
   - By default, this option contains the following attribute names:
     - objectcategory
     - objectguid
@@ -695,7 +731,7 @@ All the other columns correspond to the identity's characteristics, such as the 
 
 The following table describes the columns required by the model.
 
-|         Column          |        Example        | Mandatory? |                 Description                 |
+| Column                  | Example               | Mandatory? | Description                                 |
 | :---------------------- | :-------------------- | :--------- | :------------------------------------------ |
 | hrcode                  | ID0000183             | No         | Employee ID number                          |
 | givenname               | Denis                 | Yes        | First name                                  |
@@ -766,18 +802,18 @@ The extraction script also generates events in the Windows Event log. These are 
 
 Only important events are logged in the event log:
 
-| Message                                                       | Level        |
-| :--------------------------------------------                 | :----------- |
-| bw_data_collector has started                                 | Information  |
-| bw_data_collector upload zip started                          | Information  |
-| Request sent without Zip file                                 | Information  |
-| bw_data_collector zip file successfully uploaded              | Information  |
-| bw_data_collector zip upload failed                           | Error        |
-| bw_data_collector has finished with code 0                    | Information  |
-| bw_data_collector has finished with code 1                    | Error        |
-| bw_data_collector has finished with code 0 (forceUpload=True) | Information  |
-| Unable to compress log files                                  | Error        |
-| Unable to clean working directories                           | Error        |
+| Message                                                       | Level       |
+| :------------------------------------------------------------ | :---------- |
+| bw_data_collector has started                                 | Information |
+| bw_data_collector upload zip started                          | Information |
+| Request sent without Zip file                                 | Information |
+| bw_data_collector zip file successfully uploaded              | Information |
+| bw_data_collector zip upload failed                           | Error       |
+| bw_data_collector has finished with code 0                    | Information |
+| bw_data_collector has finished with code 1                    | Error       |
+| bw_data_collector has finished with code 0 (forceUpload=True) | Information |
+| Unable to compress log files                                  | Error       |
+| Unable to clean working directories                           | Error       |
 
 ### Upgrade
 
