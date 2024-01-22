@@ -157,6 +157,33 @@ For customers under maintenance/subscription contract as well as official partne
 
 </section>
 
+## Best practices
+
+<section>
+
+  > [Best practices for installation and deployment](/ia/descartes/best-practice/01-installation-and-deployment)  
+  > This document best practices during the installation and the deployment of iGRC.  
+
+  > [Best practices for your DBMS](/ia/descartes/best-practice/02-databases)  
+  > This document best practices when configuring the database management systems.  
+
+  > [Best practices for rules](/ia/descartes/best-practice/03-rules)  
+  > This document best practices when creating rules.  
+
+  > [Best practices for views](/ia/descartes/best-practice/04-views)  
+  > This document best practices when creating views.  
+
+  > [Best practices for pages](/ia/descartes/best-practice/05-pages)  
+  > This document best practices when creating pages.  
+
+  > [Best practices for workflows](/ia/descartes/best-practice/06-workflows)  
+  > This document best practices when creating workflows.  
+
+  > [Best practices for reports](/ia/descartes/best-practice/07-reports)  
+  > This document best practices when creating reports.  
+
+</section>
+
 ## Legacy documentation
 
 <section>
