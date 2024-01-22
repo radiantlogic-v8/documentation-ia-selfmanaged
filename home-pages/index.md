@@ -18,7 +18,7 @@ description: Guide to help build and run Identity Analytic's self-managed soluti
 Correlate your identity data and add analytics to improve data quality, properly respond to audit recommendations and automate IT controls. Get a full overview of access chains with all the identity context: gain key visibility into all human and non-human identities to simplify user access reviews and ensure that your company’s entitlements are compliant. Browse below to learn more about the capabilities and components that comprise Identity Analytics and link to the guides to help get you started.  
   
 <section>
-  
+
   > [Portal](/ia/iap-2.0/identity-analytics/enduser-guide/01-introduction)  
   > This section describes the basic principles of IAP (Identity Analytics Platform) interfaces and dashboards.  
 
@@ -36,7 +36,7 @@ Correlate your identity data and add analytics to improve data quality, properly
 ## Modules
 
 <section>
-  
+
   > [Controls Browser](/ia/iap-2.0/controls-browser/controls-browser)  
   > Controls Browser provides administrators with an overview of the configured controls and associated defects to understand current risk.  
 
@@ -207,7 +207,7 @@ Please note that the "standard" installation method of installing the solution i
 ## Identity Analytics self-managed Guide
 
 <section>
-  
+
   > [Pre-requisites](/ia/version-1.4/before-installation/preface)  
   > The included page will provide you with all the necessary information and processes to implement before the installation of the self-managed solution of Identity Analytics.  
 
