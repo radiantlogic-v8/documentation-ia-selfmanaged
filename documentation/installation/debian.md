@@ -140,3 +140,12 @@ brainwave start
 ```
 
 Once installed navigate to the `/config` webpage to finalize the configuration. Please see [here](/configuration/config-ui) for more information.  
+
+## Auto completion
+
+An auto completion bash exists for linux environments. Add the following command line to your users bash profile:
+
+
+```sh
+source <(brainwave completion bash)
+```
