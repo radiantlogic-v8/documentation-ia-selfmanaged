@@ -128,10 +128,16 @@ By default we bind to the standard ports 80 and 443. To do so, in the follwing f
 nano /etc/sysctl.conf
 ```
 
-Add the following lines: 
+Add the following lines, to open the ports 80 and 443: 
 
 ```sh
 net.ipv4.ip_unprivileged_port_start=80
+```
+
+if you wish to open only the 443 port the the following line should be added instead:  
+
+```sh
+net.ipv4.ip_unprivileged_port_start=443
 ```
 
 ### Environment variables
