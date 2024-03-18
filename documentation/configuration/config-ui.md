@@ -75,7 +75,7 @@ Please note that:
 - Debug mode enabled: Enable or disable debug mode. This will add some logs for all services except portal. It shouldn't be used in production. Please refer to the [debug installation page](../installation/preface/#debug-options) for more information on this specific deployment.  
 - Batch memory: The max memory allocated to the batch service.
 - Portal memory: The max memory allocated to the portal service.
-- Controller memory: The max memory allocated to the controller service (usefull when uploading large files).
+- Controller memory: The max memory allocated to the controller service (useful when uploading large files).
 
 ### Database
 

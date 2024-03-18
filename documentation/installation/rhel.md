@@ -1,5 +1,5 @@
 ---
-title: Red Haat installation
+title: Red Hat installation
 description: Identity Analytics self-managed installation on Red Hat
 ---
 
