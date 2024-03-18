@@ -7,3 +7,4 @@ description: List of system requirements for the self-managed solution
 - [Backup and Restore](backup-restore.md)
 - [Data Purging](purge.md)
 - [Upgrading](upgrading.md)
+- [Reconcilitaion](reconciliation.md)

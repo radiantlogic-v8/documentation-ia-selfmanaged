@@ -13,7 +13,7 @@ Version 1.5 of the selfmanaged solution for IDA includes:
 
 - RedHat enterprise Linux support for verison. See [here](../installation/rhel) for the installation procedure.
 - Batch: new feature to break reconciliations during the execution plan
-- Config: Allow to cusotmize the max memory limit fo the controller. See [here](../configuration/config-ui#global) for more information.
+- Config: Allow to customize the max memory limit fo the controller. See [here](../configuration/config-ui#global) for more information.
 - Config: provide a default git configuration out-of-the box. See [here](../configuration/config-ui#git-project) for more information.
 - Config: Modify the JAVA_OPTS used for running the batch. See [here](../configuration/config-ui#batch) for more information.
 - Various vulnerabilities and bug fixes  

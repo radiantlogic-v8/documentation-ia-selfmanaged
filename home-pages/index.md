@@ -204,7 +204,7 @@ The following pages will provide you with the necessary information to build and
 
 Please note that the "standard" installation method of installing the solution is still available for those that require it.  
 
-## Identity Analytics self-managed Guide
+## Identity Analytics self-managed updates
 
 <section>
 
@@ -212,6 +212,8 @@ Please note that the "standard" installation method of installing the solution i
   > Please find the release notes for the latest release of the self-managed solution for IDA.  
 
 </section>
+
+## Identity Analytics self-managed Guides
 
 <section>
 
