@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Identity Data Management Integration"
 parent: "Integrations"
 ---

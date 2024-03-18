@@ -1,9 +1,6 @@
 ---
-layout: page
 title: "Rocky Linux"
-toc: true
-nav_exclude: true
-search_exclude: true
+description: "Rocky linux installation"
 ---
 
 > [!warning] The following procedure is provided as an example. Rocky Linux is not supported officially by docker and BrainwaveGRC.  
