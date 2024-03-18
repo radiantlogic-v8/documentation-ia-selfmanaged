@@ -208,28 +208,35 @@ Please note that the "standard" installation method of installing the solution i
 
 <section>
 
-  > [Pre-requisites](/ia/version-1.4/before-installation/preface)  
+  > [Release Notes](/ia/version-1.5/release-notes/)
+  > Please find the release notes for the latest release of the self-managed solution for IDA.  
+
+</section>
+
+<section>
+
+  > [Pre-requisites](/ia/version-1.5/before-installation/preface)  
   > The included page will provide you with all the necessary information and processes to implement before the installation of the self-managed solution of Identity Analytics.  
 
-  > [Configuration](/ia/version-1.4/configuration/config-ui)
+  > [Configuration](/ia/version-1.5/configuration/config-ui)
   > Learn how to configure the self-managed solution of Identity Analytics.  
 
-  > [Installation guide](/ia/version-1.4/installation/preface)
+  > [Installation guide](/ia/version-1.5/installation/preface)
   > Learn how to install the self-managed solution on the different supported environments.  
 
-  > [Identity Data Management integration](/ia/version-1.4/integrations/iddm)
+  > [Identity Data Management integration](/ia/version-1.5/integrations/iddm)
   > Learn how to integrate your Identity Data Management solution with Identity Analytics smoothly.  
 
-  > [Azure Connector configuration](/ia/version-1.4/connectors/azure-connector)
+  > [Azure Connector configuration](/ia/version-1.5/connectors/azure-connector)
   > Learn how to configure your connection to an Azure data source to ingest and audit your azure data.  
 
-  > [Controller user guide](/ia/version-1.4/containers/controller)
+  > [Controller user guide](/ia/version-1.5/containers/controller)
   > The linked page is the user guide for the controller. This documentation provides all the necessary information on how to use the controller from email configuration to extraction testing.  
 
-  > [Run ops](/ia/version-1.4/run-ops/preface)
+  > [Run ops](/ia/version-1.5/run-ops/preface)
   > Learn all the necessary commands to ensure a successful run and maintenance of the self-managed solution in time.  
 
-  > [Troubleshooting](/ia/version-1.4/troubleshooting/troubleshooting)
+  > [Troubleshooting](/ia/version-1.5/troubleshooting/troubleshooting)
   > Theses pages include the symptoms and the solutions of common errors encountered when running the solution.  
 
 </section>

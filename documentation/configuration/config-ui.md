@@ -7,7 +7,7 @@ description: Description of the Configuration UI
 
 ## First connection
 
-Upon first connection to the configuration interface `<hostname>/config`, you will be redirected to the login page.
+To access the configuration page navigate to `<hostname>/config`, If not logged in you will be redirected to the login page.
 
 ![Login Page](images/config-interface/login.png)
 
@@ -75,6 +75,7 @@ Please note that:
 - Debug mode enabled: Enable or disable debug mode. This will add some logs for all services except portal. It shouldn't be used in production. Please refer to the [debug installation page](../installation/preface/#debug-options) for more information on this specific deployment.  
 - Batch memory: The max memory allocated to the batch service.
 - Portal memory: The max memory allocated to the portal service.
+- Controller memory: The max memory allocated to the controller service (usefull when uploading large files).
 
 ### Database
 
@@ -114,6 +115,8 @@ Please note that:
 - Connection test: This button will test a user's connection to the external database. In order to test the connection, it uses the username you provided in the configuration page and it asks you for a password. **The password you provide to test your connection isn't saved to your configuration!** Please note that the validity of the configured schemas name is not included in the test.
 
 ### Git project
+
+> [!warning] Upon first connection to the `/config` endpoint it is necessary to finalise the configuration by updating the `Username` and the connection password.
 
 #### Without proxy
 
@@ -170,6 +173,7 @@ Enabling this option will route Git traffic through an HTTP proxy. Useful if acc
 ![Batch Page](images/config-interface/batch.png)
 
 - Technical configuration name: The name of the technical configuration used for the execution of the batch, the data ingestion.
+- JVM configuration Options. JVM options tu use when running the Batch (the execution plan).
 
 ### Scheduling
 
