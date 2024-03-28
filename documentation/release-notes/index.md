@@ -53,15 +53,15 @@ Version 1.5 of the selfmanaged solution for IDA includes:
 - `PP-722`: Update base image for bwextract
 - `PP-720`: Pipeline - Bump version to 1.5
 - `PP-717`: The collection of objectclass in the collector line of generic ldap are not truly multivalued
-- `PP-716`: [New] AI Steward service - Add Ingress
+- `PP-716`: Backend preparation to support AIDA service - Add Ingress
 - `PP-715`: Update bwingress image
 - `PP-712`: Upgrade APISIX and Keycloak to latest version
 - `PP-711`: [New] Portal WS should be accessible to other services without authentication
 - `PP-709`: Favicon KO when login to the IA interface, keycloak favicon instead of Radiant
-- `PP-708`: [New] Integrate ServiceNow CMDB connector
-- `PP-706`: [New] AI Steward service
-- `PP-705`: [New] Allow to remove an account from a group in IDDM
-- `PP-704`: [New] Allow to deactivate an account in IDDM
+- `PP-708`: Backend preparation to support integrate ServiceNow CMDB connector
+- `PP-706`: Backend preparation to support AIDA mock service
+- `PP-705`: Backend preparation to support account removal from a group in IDDM
+- `PP-704`: Backend preparation to support deactivation an account in IDDM
 - `PP-696`: [DSM] Azure AD : issues with EVERYONE_EXCEPT_EXTERNAL_USERS group
 - `PP-693`: [DSM] Files uploaded during auto discover or test datasource remain forever on container and are accessible to connected users
 - `PP-676`: Improve error logs when user does not have at least the user role (401)
