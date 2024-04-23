@@ -26,7 +26,7 @@ dnf -y update
 dnf -y install podman
 ```
 
-To run the selfmanaged solution in RHEL using podman it is necessary to install docker compose [https://github.com/docker/compose](https://github.com/docker/compose)
+To run the selfmanaged solution in RHEL using podman it is necessary to install docker compose [https://github.com/docker/compose](https://github.com/docker/compose). The following commands should be installed as root.
 
 ```sh
 curl -SL https://github.com/docker/compose/releases/latest/download/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
@@ -40,28 +40,30 @@ podman --version
 docker-compose --version
 ```
 
-When running podman as a non root user it is necessary to enable the service and the socket for desired user: 
+When running podman as a non root user it is necessary to enable the service and the socket for desired user (e.g. brainwave):  
 
 ```sh
 systemctl enable --now --user podman podman.socket
 systemctl --user status podman.socket
 ```
 
+> If you get the error when executing the above command please update the environment variables before re-running the commands. See [Environment variables](#environment-variables) for more information.  
+
 ### Red Hat 8 requirements
 
-By default RHEL8 runs on croup-v1, however to run podman rootless in RHEL 8 it is necessary to set cgroups V2 as the defautl in the grub. Please execute the following commands as root (see [here](https://access.redhat.com/solutions/6898151) for more information):  
+By default RHEL8 runs on croup-v1, however to run podman rootless in RHEL 8 it is necessary to set `cgroups V2` as the default in the grub. Please execute the following commands as root (see [here](https://access.redhat.com/solutions/6898151) for more information):  
 
 ```sh
 grubby --update-kernel=ALL --args="systemd.unified_cgroup_hierarchy=1"
 ```
 
-Once the grubb is updated it is necessary to reboot the service. 
+Once the grub is updated it is necessary to reboot the service.  
 
-Once the grub is updated it is necessary to update the configuration of the controllers for the user running podman. The following commands should be updated to correspond to the UID of the owner of the podman socket.
+Once the grub is updated it is necessary to update the configuration of the controllers for the user running podman. The following commands should be updated to correspond to the UID of the owner of the podman socket and be executed as root.
 
 ```sh
-mkdir /etc/systemd/system/user-1000.slice.d
-nano /etc/systemd/system/user-1000.slice.d/controllers.conf
+mkdir /etc/systemd/system/user-<user UID>.slice.d
+nano /etc/systemd/system/user-<user UID>.slice.d/controllers.conf
 ```
 
 Paste the following in the previously created file:
@@ -81,13 +83,13 @@ systemctl daemon-reload
 
 ### Podman requirements
 
-Install the required package netavark as root:
+Install the required package `netavark` as root:
 
 ```sh
 dnf install netavark
 ```
 
-The following configuration changes Podman are required for the service to run. The values are overwritten by the values present in the following files. Please adapt the path to correspond to the user running podman: 
+The following configuration changes Podman are required for the service to run. The values are overwritten by the values present in the following files. Please adapt the path to correspond to the user running podman:  
 
 ```sh
 mkdir /home/<user>/.config/containers
@@ -107,7 +109,7 @@ network_backend = "netavark"
 events_logger = "journald"
 ```
 
-Once the podman configuration is update it is required to restart the socket:
+Once the podman configuration is update it is required to restart the podman socket by running the follwing command as the user (e.g. brainwave):
 
 ```sh
 systemctl --user restart podman.socket
@@ -122,23 +124,23 @@ podman info | grep backend
 
 ### Port configuration
 
-By default we bind to the standard ports 80 and 443. To do so, in the follwing file as root: 
+By default we bind to the standard ports 80 and 443. To do so, in the following file as root:  
 
 ```sh
 nano /etc/sysctl.conf
 ```
 
-Add the following lines, to open the ports 80 and 443: 
+Add the following lines, to open the ports 80 and 443:  
 
 ```sh
 net.ipv4.ip_unprivileged_port_start=80
 ```
 
-if you wish to open only the 443 port the the following line should be added instead:  
-
-```sh
-net.ipv4.ip_unprivileged_port_start=443
-```
+> If you wish to open only the 443 port the the following line should be added instead:  
+>
+> ```sh
+> net.ipv4.ip_unprivileged_port_start=443
+> ```
 
 ### Environment variables
 
@@ -147,6 +149,12 @@ If not added please add the following parameters to your users `~/.bashrc` file:
 ```sh
 export XDG_RUNTIME_DIR=/run/user/$(id -u)
 export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus"
+```
+
+Please remember to reload your bash profile:
+
+```sh
+source ~/.bashrc
 ```
 
 ## Creating Users are Required Directories
@@ -165,20 +173,44 @@ mkdir -p /usr/local/brainwave
 Set the owner of the new directories:
 
 ```sh
-chown -R brainwave:brainwave /var/log/brainwave
-chown -R brainwave:brainwave /var/lib/brainwave
-chown -R brainwave:brainwave /etc/brainwave
-chown -R brainwave:brainwave /usr/local/brainwave
+chown -Rf brainwave:brainwave /var/log/brainwave
+chown -Rf brainwave:brainwave /var/lib/brainwave
+chown -Rf brainwave:brainwave /etc/brainwave
+chown -Rf brainwave:brainwave /usr/local/brainwave
 ```
 
 Set the permissions
 
 ```sh
-chmod ug+rwx -R /var/log/brainwave
-chmod ug+rwx -R /var/lib/brainwave
-chmod ug+rwx -R /etc/brainwave
-chmod ug+rwx -R /usr/local/brainwave
+chmod ug+rwx,o+rx -Rf /var/log/brainwave
+chmod ug+rwx,o+rx -Rf /var/lib/brainwave
+chmod ug+rwx,o+rx -Rf /etc/brainwave
+chmod ug+rwx,o+rx -Rf /usr/local/brainwave
 ```
+
+> Please note that if permission errors are encountered after the installation phase, then it might be necessary to redo the setting of the ownership and the permissions after the installation of the solution.  
+
+### Folder ACLs
+
+To allow the running of containers please insure that no ACls are positioned on the previously mentioned folder. Run the following commands as root.
+
+```sh
+getfacl /var/log/brainwave
+getfacl /var/lib/brainwave
+getfacl /etc/brainwave
+getfacl /usr/local/brainwave
+```
+
+If ALCs are positioned it is possible to remove them using the following commands as root.
+
+```sh
+setfacl -Rm d:u::rwx,d:g::rwx,d:o::r-x /var/log/brainwave
+setfacl -Rm d:u::rwx,d:g::rwx,d:o::r-x /var/lib/brainwave
+setfacl -Rm d:u::rwx,d:g::rwx,d:o::r-x /etc/brainwave
+setfacl -Rm d:u::rwx,d:g::rwx,d:o::r-x /usr/local/brainwave
+```
+
+> [!warning] If the ACLs automatically set please check that they are not automatically overwritten.
 
 ## Download and Install Brainwave CLI
 
@@ -186,7 +218,7 @@ Download the Identity Analytics tools binary and its corresponding sha256 file t
 
 [https://repository.brainwavegrc.com/Brainwave/-/packages/generic/brainwavetools_linux_amd64/1.2](https://repository.brainwavegrc.com/Brainwave/-/packages/generic/brainwavetools_linux_amd64/1.2)
 
-Verify the download: 
+Verify the download:  
 
 ```sh
 echo "$(cat brainwave.sha256)  brainwave" | sha256sum --check
@@ -201,15 +233,18 @@ chown brainwave:brainwave /usr/local/bin/brainwave
 chmod ug+x /usr/local/bin/brainwave
 ```
 
-Add the current user to the brainwave group
+As root add the current user to the brainwave group
 
 ```sh
-sudo gpasswd -a $(whoami) brainwave
+gpasswd -a $(whoami) brainwave
 ```
 
 > [!warning] Log out and log back in, to make sure your user gets the permissions to run Identity Analytics commands `brainwave XXXX`
 
 ## Brainwave Registry
+
+> [!warning]  
+> All the following commands must be executed as the user running the service (e.g. brainwave).
 
 It is necessary to log into the docker registry for Identity Analytics to be able to pull the desired images:  
 
@@ -266,13 +301,10 @@ brainwave start
 
 Once installed navigate to the `/config` webpage to finalize the configuration. Please see [here](/configuration/config-ui) for more information.  
 
-
 ## Auto completion
 
 An auto completion bash exists for linux environments. Add the following command line to your users bash profile:
 
-
 ```sh
 source <(brainwave completion bash)
 ```
-
