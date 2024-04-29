@@ -109,7 +109,7 @@ network_backend = "netavark"
 events_logger = "journald"
 ```
 
-Once the podman configuration is update it is required to restart the podman socket by running the follwing command as the user (e.g. brainwave):
+Once the podman configuration is update it is required to restart the podman socket by running the following command as the user (e.g. brainwave):
 
 ```sh
 systemctl --user restart podman.socket
