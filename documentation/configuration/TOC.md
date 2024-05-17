@@ -7,3 +7,4 @@ description: Guides to help configure the different services of the self managed
 - [SSL configuration](ssl-configuration.md)
 - [Authentication Configuration](authentication-configuration.md)
 - [Powershell extraction configuration](powershell-extraction.md)
+- [Change container storage location in RHEL](rhel-change-container-storage-folder.md)
