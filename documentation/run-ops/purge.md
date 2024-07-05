@@ -1,6 +1,6 @@
 ---
 title: Data purge
-description: Identity Analytics self-managed solution guide to purge data
+description: Identity Analytics solution guide to purge data using the CLI
 ---
 
 # Purging timeslots
@@ -32,5 +32,5 @@ If a purge policy is defined in the technical configuration, it will be run auto
 
 > See [Define the purge](/configuration/purge-timeslots-policy/#define-the-purge) to learn how to configure the purge in your technical configuration.  
 
-Be aware that there is already a purge policy in the default `docker` technical configuration that comes with the self-managed project:  
+Be aware that there is already a purge policy in the default `docker` technical configuration that comes with the project:  
 ![Docker configuration default purge](images/docker_conf_default_purge.png)  

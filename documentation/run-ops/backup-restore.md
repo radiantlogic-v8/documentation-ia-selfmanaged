@@ -1,6 +1,6 @@
 ---
 title: Backup and Restore
-description: Identity Analytics self-managed solution backup and restore guides
+description: Identity Analytics solution backup and restore guides  thought the CLI
 ---
 
 # Backup and Restore

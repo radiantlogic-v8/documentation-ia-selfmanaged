@@ -1,6 +1,6 @@
 ---
 title: Solution Upgrades
-description: Identity Analytics self-managed solution upgrade guides
+description: Identity Analytics solution upgrade guides using the CLI
 ---
 
 # Upgrading the application

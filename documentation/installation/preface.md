@@ -1,22 +1,22 @@
 ---
 title: Installation
-description: Guides to how to install Identity Analytics Self-Managed solution 
+description: Guides to how to install Identity Analytics solution using the CLI
 ---
 
-# Identity Analytics Self-managed installation
+# Identity Analytics installation throught the CLI
 
-Installation of the self-managed solution is only supported for:
+Installation of the solution through docker-compose and the CLI is only supported for:
 
 - [Debian](debian) in a production environment
 - [Windows desktop](windows-desktop) for dev and demo purposes
 
-Before installing the self-managed solution please refer to the [installation requirements](../before-installation/preface) page to validate a your system requirements and desired installation method.  
+Before installing Identity Analytics  please refer to the [installation requirements](../before-installation/preface) page to validate a your system requirements and desired installation method.  
 
 ## Debug options
 
 > The following documentation is not to be used in a PROD environnement. This documentation is provided for demonstration or development environments.  
 
-The following action are to be executed after having installed the self-managed solution for Identity Analytics.  
+The following action are to be executed after having installed the Identity Analytics thought the CLI.  
 
 ### Activate debug options  
 
@@ -45,4 +45,4 @@ brainwave pull
 brainwave start
 ```
 
-These operations must be performed manually.  
+These operations must be performed manually.

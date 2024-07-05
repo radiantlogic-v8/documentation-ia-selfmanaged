@@ -1,6 +1,6 @@
 ---
 title: System Requirements
-description: List of system requirements for the self-managed solution
+description: List of system requirements for the docker-compose installation of the solution
 ---
 
 # System requirements
@@ -58,7 +58,7 @@ A total of 512 GB of disk space is recommended.
 
 #### Server mode
 
-When installing the self-managed service in server mode. The following folder paths are used by the self-managed service. These paths cannot be changed.
+When installing the service in server mode. The following folder paths are used by the service. These paths cannot be changed.
 The following list will also provide you with information on what the folder are used for and provide an estimation of the **minimum** size requirements for each.  
 
 - `/etc/brainwave`

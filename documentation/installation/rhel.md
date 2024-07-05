@@ -1,6 +1,6 @@
 ---
 title: Red Hat installation
-description: Identity Analytics self-managed installation on Red Hat
+description: Identity Analytics installation on Red Hat through the CLI
 ---
 
 # Red Hat installation
@@ -26,7 +26,7 @@ dnf -y update
 dnf -y install podman
 ```
 
-To run the selfmanaged solution in RHEL using podman it is necessary to install docker compose [https://github.com/docker/compose](https://github.com/docker/compose). The following commands should be installed as root.
+To run the docker-compose installation of the solution in RHEL using podman it is necessary to install docker compose [https://github.com/docker/compose](https://github.com/docker/compose). The following commands should be installed as root.
 
 ```sh
 curl -SL https://github.com/docker/compose/releases/latest/download/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose

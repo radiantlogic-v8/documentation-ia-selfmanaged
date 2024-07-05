@@ -1,6 +1,6 @@
 ---
 title: Windows desktop installation
-description: Identity Analytics self-managed installation on a windows desktop
+description: Identity Analytics installation on a windows desktop thought the CLI
 ---
 
 # Windows desktop installation

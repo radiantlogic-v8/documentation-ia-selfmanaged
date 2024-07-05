@@ -1,6 +1,6 @@
 ---
 title: Installation
-description: Guides to how to install Identity Analytics Self-Managed solution 
+description: Guides to how to install Identity Analytics solution using the CLI 
 ---
 
 - [Preface](preface.md)

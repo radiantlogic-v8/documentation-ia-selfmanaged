@@ -5,12 +5,12 @@ description: Authentication and authorization configuration
 
 # Authentication and authorization configuration
 
-All resources provided by the current Identity analytics self-managed solution are protected by the Authentication and Authorization server.
+All resources provided by the current Identity analytics solution installed using docker-compose are protected by the Authentication and Authorization server.
 It is implemented with [RedHat Keycloak](https://www.keycloak.org). This chapter describes how to implement supported use cases. For detailed explanations about options, please refer to the [official documentation](https://www.keycloak.org/docs/latest/server_admin/index.html).
 
 ## Supported Identity Providers
 
-The current Identity analytics self-managed solution supports:
+The current Identity analytics solution installed using docker-compose supports:
 
 - **Local Directory**: this the default identity provider. Users, its credentials and groups/roles are stored in the Keycloak's internal repository.
 - **User Federation with Active Directory**: the user federation allows Keycloak to delegate authentication and authorization based on groups to Active Directory through LDAP(s) v3 protocol.
@@ -27,7 +27,7 @@ This package comes with default configuration (clients, roles, etc.). The roles 
 
 All these roles are defined in the client `apisix` client of the `Brainwave` realm.
 
-> [!warning] If you change the configuration of those roles or delete them, the Identity analytics self-managed solution will not work anymore.
+> [!warning] If you change the configuration of those roles or delete them, the Identity analytics solution will not work anymore.
 
 ## Keycloak Administration Console
 
@@ -113,7 +113,7 @@ To enable Keycloak to query your Active Directory, you must declare a read-only 
 
 Enable Active Directory to support LDAP or LDAPs if not yet available
 
-Open route from the Identity analytics self-managed solution cluster to Active Directory on port LDAP port (default is 389) or LDAPs port (default 686).
+Open route from the Identity analytics solution cluster to Active Directory on port LDAP port (default is 389) or LDAPs port (default 686).
 
 ### User Federation required information
 
@@ -122,7 +122,7 @@ Get from your Active Directory administrator:
 - [ ] `LDAP Host`: Domain Controller host name or IP
 - [ ] `Service Account Bind DN`: Service Account distinguished name.
 - [ ] `Service Account Bind Credentials`: Service Account credentials.
-- [ ] `Users DN`: distinguished name from which users are searched for. If users that you will grant to Identity analytics self-managed solution are located in distinct nodes, choose the root DN common to those nodes. It is not possible to enter more than one DN to search for users.
+- [ ] `Users DN`: distinguished name from which users are searched for. If users that you will grant to Identity analytics solution are located in distinct nodes, choose the root DN common to those nodes. It is not possible to enter more than one DN to search for users.
 - [ ] `Username LDAP attribute`: name of the LDAP attribute which is mapped to Keycloak username. For instance `cn` or `sAMAccountName`.
 - [ ] `User search scope`: possible values are `One Level` or `Subtree`. First option means that users are search at the `Users DN` level. Second options means that users are searched whatever the level from `Users DN`.
 - [ ] `Groups DN`: distinguished name from which groups are searched for. If groups assigned to LDAP users are located in distinct nodes, choose the root DN common to those nodes. It is not possible to enter more than one DN to search for groups.
@@ -257,7 +257,7 @@ Ask your Azure Active Directory Administrator to create a new `App Registration`
 
 - `Redirect URI`: this is the address of Keycloak instance. This URI looks like `PROTOCOL`://`DNS_SERVICE_NAME`/auth/realms/brainwave/broker/`ALIAS`/endpoint where
   - `PROTOCOL` is http or https depending on your deployment configuration
-  - `DNS_SERVICE_NAME` is the DNS of the Identity analytics self-managed solution cluster
+  - `DNS_SERVICE_NAME` is the DNS of the Identity analytics solution cluster
   - `ALIAS` is the unique identifier set in Keycloak to this identity provider (remember it for later configuration). We suggest to provide a string that represents the Identity Provider without space or special characters. For instance, `bw-aad-oidc` for Identity Analytics Azure Active Directory using OpenID Connect.
 - `Token configuration`: ask for optional groups claim with properties
   - Add `Security groups`.

@@ -1,11 +1,11 @@
 ---
 title: Run-ops
-description: Identity Analytics self-managed solution run-ops guide
+description: Identity Analytics solution run-ops guide using the CLI
 ---
 
 # Run-ops
 
-The sub-pages include the documentation on the different operations executed when running the self-managed solution.  
+The sub-pages include the documentation on the different operations executed when running the Identity Analytics using the CLI.  
 
 These include, among others:  
 

@@ -1,6 +1,6 @@
 ---
 title: System Requirements
-description: List of system requirements for the self-managed solution
+description: List of system requirements for Identity Analytics installed through the CLI
 ---
 
 - [Preface](preface.md)

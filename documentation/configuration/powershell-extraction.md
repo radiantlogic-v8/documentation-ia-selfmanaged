@@ -225,7 +225,7 @@ Here is a sample of a configuration file:
 
 The main configuration parameters are:  
 
-- `auth_hostname`: Hostname of the server on which to upload the files. This is the server running the selfmanaged solution
+- `auth_hostname`: Hostname of the server on which to upload the files. This is the server running the docker-compose installation of the solution
 - `auth_realmname`: The authorization realm name as defined in Keycloak. By default this value should be set to `brainwave`
 - `auth_tls`: Upload using https. This is the recommended parameter to use un a Prod environment
 - `disableUpload`: boolean value to disable zip upload, should be false to activate upload.

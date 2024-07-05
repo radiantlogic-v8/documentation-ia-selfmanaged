@@ -1,6 +1,6 @@
 ---
 title: Before installation
-description: List of pre-requisites to validate before installing the self-managed solution
+description: List of pre-requisites to validate before installing the solution through docker-compose
 ---
 
 # Before installation

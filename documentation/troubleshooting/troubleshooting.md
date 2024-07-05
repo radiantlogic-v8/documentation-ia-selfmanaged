@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting
-description: Identity Analytics self-managed solution troubleshooting guide
+description: Identity Analytics solution troubleshooting guide when using the CLI
 ---
 
 # Troubleshooting

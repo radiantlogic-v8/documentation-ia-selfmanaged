@@ -1,6 +1,6 @@
 ---
 title: Debian installation
-description: Identity Analytics self-managed installation on Debian
+description: Identity Analytics installation on Debian using the CLI
 ---
 
 # Debian installation

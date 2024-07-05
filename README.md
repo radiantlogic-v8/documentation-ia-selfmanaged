@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This repository holds the documentation for the installation, the configuration and the run of Identity Analytics when installed as self-managed.  
+This repository holds the documentation for the installation, the configuration and the run of Identity Analytics when installed using docker-compose and the the CLI.  
 The documentation is used as an input to build the documentation [https://developer.radiantlogic.com/](https://developer.radiantlogic.com/)
 
 ## Repository Structure
@@ -23,7 +23,7 @@ GATSBY_DEPLOY_REPOS='
     "description": "This guide provides a high-level overview of Identity Analytics. This documentation includes the user guides, integration guides for Identity Analytics along with the different modules included.",
         "links": [
       {
-        "text": "SEE SELF-MANAGED GUIDES",
+        "text": "SEE CLI GUIDES",
         "href": "/ia/version-1.2/#2"
       }
     ],

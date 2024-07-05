@@ -1,11 +1,11 @@
 ---
 title: Cheat-Sheet
-description: Cheat Sheet for when using Identity Analytics self-managed solution
+description: Cheat Sheet for when using Identity Analytics solution using the CLI
 ---
 
 # Cheat-sheet
 
-The following page provides you with high level information that can be useful when running the self-managed solution of identity analytics, a cheat sheet of sorts.  
+The following page provides you with high level information that can be useful when running the solution of identity analytics using the CLI, a cheat sheet of sorts.  
 
 ## Default credentials
 
@@ -42,7 +42,7 @@ If you are running a demonstration or sandbox environment, add the hostname you 
 
 ## Data Location
 
-Please use the following link for more information on the folders (paths) used by the self-managed solution:  
+Please use the following link for more information on the folders (paths) used by Identity Analytics:  
 
 [Data location](/before-installation/requirements/#docker-host-disk)
 
