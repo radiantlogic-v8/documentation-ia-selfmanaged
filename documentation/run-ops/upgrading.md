@@ -13,9 +13,10 @@ description: Identity Analytics self-managed solution upgrade guides
 To upgrade the version of the CLI.  
 
 1. Download the latest version [here](https://repository.brainwavegrc.com/Brainwave/-/packages)
-2. Copy the downloaded file to the desired folder:  
-   - `/usr/local/bin` when in server mode
-   - Into the created folder in desktop mode
+2. Copy the downloaded file to the desired folder:
+    - `/usr/local/bin` when in server mode
+    - Into the created folder in desktop mode
+3. Update execution rights on the executable if necessary
 
 ## Updating all containers (minor versions)
 
@@ -35,7 +36,7 @@ Images:                    All present               √
 Services                   Stopped                   ‼
 ```
 
-> Please stop the service before performing the upgrade: `brainwave stop` 
+> Please stop the service before performing the upgrade: `brainwave stop`  
 
 To run the update, the easiest method is to run the following commands:  
 
@@ -58,12 +59,13 @@ brainwave admin upgrade --clean-images --pull --start
 ## Major version upgrade
   
 The major upgrade process differs slightly from minor upgrades as you need to upgrade your CLI.  
+A major upgrade corresponds to an upgrade of 1.X to 1.(X+1) for example 1.5 to 1.6.  
 This guide is primarily written for a **server install** on a linux platform.  
 Most steps after the installation of the CLI should stay the same for a Desktop install.  
 
 ### Prerequisites
 
-Make sure to have your project's repository configured to be our official Gitea repository: repository.brainwavegrc.com/brainwave.  
+Make sure to have your project's repository configured to point to our official Gitea repository: [https://repository.brainwavegrc.com/brainwave](https://repository.brainwavegrc.com/brainwave).  
 You can run `brainwave status` to retrieve that info.  
 If you happen to be on another repository, you will need to modify your .env file (in /usr/local/brainwave):  
 Change your REGISTRY_URL variable to : `repository.brainwavegrc.com/brainwave`  
@@ -106,18 +108,20 @@ Installed version:  1.2.198
 × This client version is incompatible with the installed application
 ```
 
-5. Run `brainwave admin upgrade --clean-images --pull --start`
+5. Run `brainwave admin upgrade --clean-images --pull`
+    - If you have an internal database (for demonstration purposes only) you should have now a functional install of your new version!
+    - If you are using and external database please follow the steps detailed in the warning below.
 
-> If you have an internal database you should have now a functional install of your new version!  
+> [!warning] If you run the service using an external database, follow next steps:
+>
+> 1. Navigate to [repository.brainwavegrc.com](https://repository.brainwavegrc.com) to check the existence of upgrade scripts for SQL. Upgrade scripts exist for migrations from version 1.5 to 1.6
+> 2. Execute the upgrade scripts on your external database, please run the scripts with the correct users
+> 3. Navigate to `<hostname>/config` and go to the Database panel.
+> 4. Verify and refill all fields with the appropriate connection information and test the connections, focussing on the username/schema combo. Save when done.
 
-> [!warning] If you run an external database, follow next steps:
-  
-1. Navigate to `<hostname>/config` and go to the Database panel.
-2. Verify and refill all fields with the appropriate connection information and test the connections, focussing on the username/schema combo. Save when done.
-3. Restart all container using:
-   
+6. Start the updated service  
+
 ```bash
-brainwave stop
 brainwave start
 ```  
 
