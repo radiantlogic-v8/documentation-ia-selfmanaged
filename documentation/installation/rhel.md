@@ -15,7 +15,7 @@ timedatectl set-timezone Europe/Paris
 
 To install podman please refer to podman's official documentation:
 
-- [https://podman.io/docs/installation](https://podman.io/docs/installation)
+- https://podman.io/docs/installation
 
 > [!warning] Log out and log back in, to make sure your user gets the permissions to run podman commands
 
@@ -26,7 +26,7 @@ dnf -y update
 dnf -y install podman
 ```
 
-To run the docker-compose installation of the solution in RHEL using podman it is necessary to install docker compose [https://github.com/docker/compose](https://github.com/docker/compose). The following commands should be installed as root.
+To run the docker-compose installation of the solution in RHEL using podman it is necessary to install docker compose https://github.com/docker/compose. The following commands should be installed as root.
 
 ```sh
 curl -SL https://github.com/docker/compose/releases/latest/download/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
@@ -214,9 +214,9 @@ setfacl -Rm d:u::rwx,d:g::rwx,d:o::r-x /usr/local/brainwave
 
 ## Download and Install Brainwave CLI
 
-Download the Identity Analytics tools binary and its corresponding sha256 file to verify the download, from Identity Analytics's Gitea repository [https://repository.brainwavegrc.com/](https://repository.brainwavegrc.com/). You can also use the following direct link:  
+Download the Identity Analytics tools binary and its corresponding sha256 file to verify the download, from Identity Analytics's Gitea repository https://repository.brainwavegrc.com/. You can also use the following direct link:  
 
-[https://repository.brainwavegrc.com/Brainwave/-/packages/generic/brainwavetools_linux_amd64/1.2](https://repository.brainwavegrc.com/Brainwave/-/packages/generic/brainwavetools_linux_amd64/1.2)
+https://repository.brainwavegrc.com/Brainwave/-/packages/generic/brainwavetools_linux_amd64/1.2
 
 Verify the download:  
 

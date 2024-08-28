@@ -32,7 +32,7 @@ sudo usermod -aG docker $(whoami)
 > [!warning] Log out and log back in, to make sure your user gets the permissions to run docker commands
 
 For more information on the installation of docker pleaser refer to the official documentation:
-[https://docs.rockylinux.org/gemstones/docker/](https://docs.rockylinux.org/gemstones/docker/)
+https://docs.rockylinux.org/gemstones/docker/
 
 ## Creating Users are Required Directories
 
@@ -72,9 +72,9 @@ sudo chmod ug+rwx -R /usr/local/brainwave
 
 ## Download and Install Brainwave CLI
 
-Download the Brainwave tools binary and its corresponding sha256 file to verify the download, from Brainwave's Gitea repository [https://repository.brainwavegrc.com/](https://repository.brainwavegrc.com/). You can also use the following direct link:  
+Download the Brainwave tools binary and its corresponding sha256 file to verify the download, from Brainwave's Gitea repository https://repository.brainwavegrc.com/. You can also use the following direct link:  
 
-[https://repository.brainwavegrc.com/Brainwave/-/packages/generic/brainwavetools_linux_amd64/1.2](https://repository.brainwavegrc.com/Brainwave/-/packages/generic/brainwavetools_linux_amd64/1.2)
+https://repository.brainwavegrc.com/Brainwave/-/packages/generic/brainwavetools_linux_amd64/1.2
 
 Verify the download
 

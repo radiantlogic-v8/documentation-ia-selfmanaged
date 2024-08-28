@@ -65,7 +65,7 @@ Most steps after the installation of the CLI should stay the same for a Desktop 
 
 ### Prerequisites
 
-Make sure to have your project's repository configured to point to our official Gitea repository: [https://repository.brainwavegrc.com/brainwave](https://repository.brainwavegrc.com/brainwave).  
+Make sure to have your project's repository configured to point to our official Gitea repository: https://repository.brainwavegrc.com/brainwave.  
 You can run `brainwave status` to retrieve that info.  
 If you happen to be on another repository, you will need to modify your .env file (in /usr/local/brainwave):  
 Change your REGISTRY_URL variable to : `repository.brainwavegrc.com/brainwave`  

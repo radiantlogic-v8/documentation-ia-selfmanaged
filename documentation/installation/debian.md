@@ -15,7 +15,7 @@ sudo timedatectl set-timezone Europe/Paris
 
 To install the docker please refer to dockers official documentation:
 
-- [https://docs.docker.com/engine/install/debian/](https://docs.docker.com/engine/install/debian/)
+- https://docs.docker.com/engine/install/debian/
 
 > [!warning] Log out and log back in, to make sure your user gets the permissions to run docker commands
 
@@ -57,9 +57,9 @@ sudo chmod ug+rwx -R /usr/local/brainwave
 
 ## Download and Install Brainwave CLI
 
-Download the Identity Analytics tools binary and its corresponding sha256 file to verify the download, from Identity Analytics's Gitea repository [https://repository.brainwavegrc.com/](https://repository.brainwavegrc.com/). You can also use the following direct link:  
+Download the Identity Analytics tools binary and its corresponding sha256 file to verify the download, from Identity Analytics's Gitea repository https://repository.brainwavegrc.com/. You can also use the following direct link:  
 
-[https://repository.brainwavegrc.com/Brainwave/-/packages/generic/brainwavetools_linux_amd64/1.2](https://repository.brainwavegrc.com/Brainwave/-/packages/generic/brainwavetools_linux_amd64/1.2)
+https://repository.brainwavegrc.com/Brainwave/-/packages/generic/brainwavetools_linux_amd64/1.2
 
 Verify the download
 

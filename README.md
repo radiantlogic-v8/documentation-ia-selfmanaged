@@ -3,7 +3,7 @@
 ## Introduction
 
 This repository holds the documentation for the installation, the configuration and the run of Identity Analytics when installed using docker-compose and the the CLI.  
-The documentation is used as an input to build the documentation [https://developer.radiantlogic.com/](https://developer.radiantlogic.com/)
+The documentation is used as an input to build the documentation https://developer.radiantlogic.com/
 
 ## Repository Structure
 

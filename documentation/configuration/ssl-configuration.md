@@ -47,7 +47,7 @@ Find the path of the volume in your local deployment place the files inside the 
 
 These steps allow to generate letsencrypt certificates using certbot on an Amazon Linux instance. Given that the instance has a valid public IP and that the port 80 is open and reachable on the internet.
 
-For more information on how to use certbot on your environment , please refer to: [https://certbot.eff.org/instructions](https://certbot.eff.org/instructions)
+For more information on how to use certbot on your environment , please refer to: https://certbot.eff.org/instructions
 
 ```sh
 sudo amazon-linux-extras install epel -y

@@ -53,7 +53,7 @@ Tested distributions are:
 ### Docker Runtime
 
 For further information on Docker please refer to the installation guides:  
-[https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/)
+https://docs.docker.com/engine/install/
 
 > [!important] In server mode, please uninstall the docker runtime delivered by your distribution if any is installed by default (snap, apt, yum).  
 > These docker runtimes are either outdated or they don't have enough rights. They are not suitable for a server install.  

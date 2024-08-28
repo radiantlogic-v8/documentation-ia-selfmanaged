@@ -77,7 +77,7 @@ Minimal size 20GB. This folder contains all docker daemon data, including the im
 
 It is possible to customize the location of Docker's Daemon data directory. Please refer to Docker's official documentation for more information:
 
-[https://docs.docker.com/config/daemon/](https://docs.docker.com/config/daemon/)
+https://docs.docker.com/config/daemon/
 
 - `/usr/local/brainwave`
 
@@ -100,8 +100,8 @@ Debian 11 (stable) or Ubuntu Server 22.04 (LTS)
 Docker Engine version 20.10
 Please refer to the following documentation for more information :
 
-- Debian: [https://docs.docker.com/engine/install/debian/](https://docs.docker.com/engine/install/debian/)
-- Ubuntu: [https://docs.docker.com/engine/install/ubuntu/](https://docs.docker.com/engine/install/ubuntu/)
+- Debian: https://docs.docker.com/engine/install/debian/
+- Ubuntu: https://docs.docker.com/engine/install/ubuntu/
 
 Docker Compose plugin must be installed.
 
@@ -132,7 +132,7 @@ When using an external database it is possible configure the initialization of t
 
 To initialize the database manually, download the SQL scripts from this direct link (it is required to be authenticated for the following link to work):
 
-[https://repository.brainwavegrc.com/Brainwave/-/packages/generic/brainwave_database_scripts/1.2](https://repository.brainwavegrc.com/Brainwave/-/packages/generic/brainwave_database_scripts/1.2)
+https://repository.brainwavegrc.com/Brainwave/-/packages/generic/brainwave_database_scripts/1.2
 
 > Please select the scripts as a function of your desired database engine.  
 

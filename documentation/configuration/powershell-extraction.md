@@ -23,7 +23,7 @@ When creating the ZIP file, the PowerShell script also adds some files generated
 
 Download the `bw_data_collector.zip` using the following direct link:
 
-[https://repository.brainwavegrc.com/Brainwave/-/packages/generic/brainwave_data_collector/1.4](https://repository.brainwavegrc.com/Brainwave/-/packages/generic/brainwave_data_collector/1.4)
+https://repository.brainwavegrc.com/Brainwave/-/packages/generic/brainwave_data_collector/1.4
 
 `bw_data_collector.zip` should be unzipped in a folder that has write access as the PowerShell script generates the output, along with temporary files, inside the installation folder.  
 
@@ -412,7 +412,7 @@ Out of the box, the configuration section for Active Directory does not contain 
 
 - `port`: LDAP server port. The default value is 389.
 
-- `authType`: Authentication method to use in LDAP connection, for more details refer to [https://msdn.microsoft.com/fr-fr/library/system.directoryservices.protocols.authtype(v=vs.110).aspx](https://msdn.microsoft.com/fr-fr/library/system.directoryservices.protocols.authtype(v=vs.110).aspx)
+- `authType`: Authentication method to use in LDAP connection, for more details refer to https://msdn.microsoft.com/fr-fr/library/system.directoryservices.protocols.authtype(v=vs.110).aspx
 
 - `useSSL`: Boolean value to activate SecureSocketLayer on LDAP connection. The default value is 'False'.
 

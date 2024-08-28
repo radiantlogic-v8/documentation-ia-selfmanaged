@@ -7,7 +7,7 @@ description: This guide provides the information required to connect and configu
 
 The latest version of the Identity analytics docker images, CLI and iGRCanalytics Project are hosted on the private repository:
 
-[https://repository.brainwavegrc.com](https://repository.brainwavegrc.com)
+https://repository.brainwavegrc.com
 
 ## Identity Analytics CLI
 
@@ -20,7 +20,7 @@ Please use the following links to download the desired CLI binary file (it is re
 
 The default Identity Analytics project is available at the following URL:  
 
-[https://repository.brainwavegrc.com/Brainwave/identityanalytics](https://repository.brainwavegrc.com/Brainwave/identityanalytics)
+https://repository.brainwavegrc.com/Brainwave/identityanalytics
 
 > Note that you will get a dedicated URL for your project (for clients/partners)  
 
@@ -60,4 +60,4 @@ You will use the value of this token as a password for the docker login and git 
 
 For more information on the use and the configuration of Gitea please refer to the official documentation:
 
-[https://docs.gitea.com/](https://docs.gitea.com/)
+https://docs.gitea.com/

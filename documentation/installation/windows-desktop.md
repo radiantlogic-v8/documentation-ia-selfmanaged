@@ -32,9 +32,9 @@ A system restart might be required. More information [here](https://learn.micros
 
 ## Download and install Identity Analytics CLI
 
-Download the Identity Analytics tools binary from Identity Analytics's Gitea repository [https://repository.brainwavegrc.com/](https://repository.brainwavegrc.com/). You can also use the following direct link:  
+Download the Identity Analytics tools binary from Identity Analytics's Gitea repository https://repository.brainwavegrc.com/. You can also use the following direct link:  
 
-[https://repository.brainwavegrc.com/Brainwave/-/packages/generic/brainwavetools_windows_amd64/1.2](https://repository.brainwavegrc.com/Brainwave/-/packages/generic/brainwavetools_windows_amd64/1.2)
+https://repository.brainwavegrc.com/Brainwave/-/packages/generic/brainwavetools_windows_amd64/1.2
 
 > Note the windows binary is signed.  
 

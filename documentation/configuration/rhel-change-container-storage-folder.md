@@ -101,4 +101,4 @@ sudo semanage fcontext -D "/share/containers/storage/overlay(/.*)?"
 
 ## More information
 
-For more information please refer to [https://docs.oracle.com/en/operating-systems/oracle-linux/podman/podman-ConfiguringStorageforPodman.html#podman-containers-mounts](https://docs.oracle.com/en/operating-systems/oracle-linux/podman/podman-ConfiguringStorageforPodman.html#podman-containers-mounts).  
+For more information please refer to https://docs.oracle.com/en/operating-systems/oracle-linux/podman/podman-ConfiguringStorageforPodman.html#podman-containers-mounts.  
