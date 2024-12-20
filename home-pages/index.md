@@ -5,6 +5,9 @@ description: Guide to help build and run Identity Analytic's solution installed 
 
 # Welcome to Identity Analytics local docker-compose installation Guide
 
+> [!warning] Docker compose installation is no longer supported for new clients.  
+> Please refer to the self-managed installation procedure for more information.
+
 In order to simplify the installation of Identity Analytics in different environments a new installation method using docker-compose for the solution has been implemented and is available.
 
 The following pages will provide you with the necessary information to build and run the updated deliverable.  
