@@ -240,7 +240,7 @@ The main configuration parameters are:
 
 > [!warning] In the case of an instance running the script to upload to an EOC environment changes are required in the config.json file:  
 >
-> - `auth_hostname`: The base URL to the EOC environment. For example: `"auth_hostname": "ia-rlqa-usw2.dev01.radiantlogic.io",`  
+> - `auth_hostname`: The base URL of the Keycloak service in the EOC environment. For example: `"auth_hostname": "auth-ia-rlqa-usw2.dev01.radiantlogic.io",`  
 > - `auth_realmname`: The environment name that is used to provision the authorization realm. For example: `"auth_realmname": "rlqa-usw2-mq01",`  
 >
 > An additional parameter is required to allow to upload the files to the correct authorization context:  
